@@ -1,0 +1,529 @@
+\documentclass[a4paper,11pt,UTF8]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
+\usepackage{cleveref}
+\usepackage{esint} 
+%opening
+\title{多元分析学课后习题第五章参考答案}
+\author{学数华科xsq}
+\setcounter{section}{0}   % 将章节计数器重置为0
+\renewcommand{\thesection}{5.\arabic{section}}   % 将“section”标题的编号格式设置为“3.x”
+\everymath{\displaystyle}
+
+\begin{document}
+	第五章课后习题参考答案
+	% \maketitle
+	%\begin{abstract}
+	%  答案仅供参考，请同学们自行思考，错误难免也请指正
+	%\end{abstract}
+\section{第二型曲线积分}
+\centerline{(A)}  
+\noindent5.1.1\quad 方法是一致的,掌握(5.1.5)及注5.1.2\\
+(1) $-\frac{14}{15}$;\\
+(2) $-2 \pi a^2$;\\
+(3)(本题有误,$x^2$后应有$\mathrm{d}y$) -2 ;\\
+(4) $-\frac{1}{2}$;\\
+(5) $\frac{4}{3}$;\\
+(6) $\frac{25}{2}$;\\
+(7) $-\pi a^2$;\\
+(8) $L$ 的参数方程为: $x=a\cos^2\theta, y=a\sin\theta\cos\theta, z=a \sin\theta, \theta \in[0, \pi]$(球坐标变换易得), 于是有：
+$$
+\oint_L y^2 \mathrm{~d} x+z^2 \mathrm{~d} y+x^2 \mathrm{~d} z=\int_{-\frac{\pi}{2}}^{ \frac{\pi}{2}}\left(-2a^2\sin^3\theta\cos^3\theta+a^3sin^2\theta\left(\cos^2\theta - \sin ^2 \theta\right)+a^2\cos^5\theta\right) \mathrm{d} \theta=-\frac{\pi}{4} a^3 .
+$$
+5.1.2 $\frac{1}{2 n+1}$.\\
+5.1.3 $-4$.\\
+5.1.4\\
+证: $I(a)=\int_0^\pi\left[1+a^3 \sin ^3 x+(2 x+a \sin x) a \cos x\right] \mathrm{d} x=\pi-4 a+\frac{2}{3} a^3$,
+$$
+I^{\prime}(a)=4-2 a^2=0,
+$$
+解得
+$$
+a=\sqrt{2} \text { (负值省去), }
+$$
+所以 $y=\sqrt{2} \sin x$ 即为所要求的曲线.\\	
+5.1.5\\
+由于 $Q_x=\frac{x^2-y^2-x y}{\left(x^2+y^2\right)^2}=P_y, L$ 为闭曲线, 可用Green公式计算(直接计算法省 略)。\\
+设 $L$ 围成区域为 $D$, 则
+(1)I $=\frac{1}{a^2} \oint_L(x+y) \mathrm{d} x-(x-y) \mathrm{d} y=\frac{1}{a^2} \iint_D(-2) \mathrm{d} x \mathrm{~d} y=-2 \pi$;
+$(2)(3)(4)$ 结果皆为 $-2 \pi$.\\
+5.1.6\\
+(1) 曲线上任意一点 $(x, y)$ 处得切向量 $\vec{T}=(1,1)$, 单位切向量为 $\vec{\tau}=\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)=$ $(\cos \alpha, \cos \beta)$, 故
+$$
+\oint_L P \mathrm{~d} x+Q \mathrm{~d} y=\int_L(P \cos \alpha+Q \cos \beta) \mathrm{d} s=\frac{\sqrt{2}}{2} \int_L(P+Q) \mathrm{d} s .
+$$
+(2) $L: y=x^2, x=x, \vec{T}=(1,2 x), \vec{\tau}=\frac{\vec{T}}{\vec{T} \mid}=\frac{(1,2 x)}{\sqrt{1+4 x^2}}$
+$$
+\oint_L P \mathrm{~d} x+Q \mathrm{~d} y=\int_L(P, Q) \cdot \vec{\tau} \mathrm{d} s=\int_L\left(\frac{P+2 x Q}{\sqrt{1+4 x^2}}\right) \mathrm{d} s
+$$
+(3) $L: x^2+y^2=a^2(y \geq 0), x: a \rightarrow 0$
+$$
+\vec{T}=-\left(1, y^{\prime}(x)\right)=-\left(1,-\frac{x}{\sqrt{a^2-x^2}}\right), \quad \vec{\tau}=\frac{\vec{T}}{|\vec{T}|}=\left(-\frac{1}{a} \sqrt{a^2-x^2}, \frac{x}{a}\right)
+$$
+所以 $\oint_L P \mathrm{~d} x+Q \mathrm{~d} y=\int_L(P, Q) \cdot \vec{\tau} \mathrm{d} s=\int_L\left(-\frac{1}{a} \sqrt{a^2-x^2} P+\frac{x}{a} Q\right) \mathrm{d} s$.\\
+5.1.7\
+切向量 $\vec{T}=\left(x^{\prime}(t), y^{\prime}(t), z^{\prime}(t)\right)=\left(1,2 t, 3 t^2\right)=(1,2 x, 3 y)$,
+$$
+\vec{\tau}=\frac{\vec{T}}{\vec{T}}=\frac{(1,2 x, 3 y)}{\sqrt{1+4 x^2+9 y^2}}
+$$
+所以, $\oint_L P \mathrm{~d} x+Q \mathrm{~d} y+R \mathrm{~d} z=\int_L(P, Q, R) \cdot \vec{\tau} \mathrm{d} s=\int_L \frac{P+2 x Q+3 y R}{\sqrt{1+4 x^2+9 y^2}} \mathrm{~d} s$.\\
+5.1.8\\
+(1) $\frac{1}{2}\left(a^2-b^2\right)$;\\
+(2) 0 .\\
+5.1.9\\
+(1) $\pi b\left(\frac{a^2}{2}+1\right)$;\\
+(2) $a b+\frac{1}{2} b^2$.\\
+(B)\\
+5.1.1\\
+梿:
+$$
+\begin{aligned}
+	\left|\int_L P \mathrm{~d} x+Q \mathrm{~d} y\right| & =\left|\int_L\left(P \frac{\mathrm{d} x}{\mathrm{~d} s}+Q \frac{\mathrm{d} y}{\mathrm{~d} s}\right) \mathrm{d} s\right| \leq \int_L\left|P \frac{\mathrm{d} x}{\mathrm{~d} s}+Q \frac{\mathrm{d} y}{\mathrm{~d} s}\right| \mathrm{d} s \\
+	& =\int_L \sqrt{P^2+Q^2} \mathrm{~d} s \leq \int_L M \mathrm{~d} s=M s
+\end{aligned}
+$$
+5.1.2\\
+对于 $I_r$, 有:
+$$
+M=\max _{x^2+y^2=r^2} \sqrt{P^2+Q^2}=\max _{x^2+y^2=r^2} \sqrt{\frac{x^2+y^2}{\left(x^2+x y+y^2\right)^4}}=\frac{4}{r^3},
+$$
+所以 $0 \leq I_r \leq \frac{4}{r^3} 2 \pi r=\frac{8 \pi}{r^2}, \Rightarrow \lim _{r \rightarrow+\infty} I_r=0$.\\
+5.1.3\\
+设 $L$ 的参数方程为: $L: x=x(t), y=y(t), t \in[\alpha, \beta]$, 则 $\Gamma$ 的参数方程为:
+$$
+L: x=x(t), y=y(t), z=\varphi(x(t), y(t)), t \in[\alpha, \beta],
+$$
+(1) 直接计算得
+$$
+\begin{aligned}
+	& \oint_{\Gamma} P(x, y, z) \mathrm{d} x+Q(x, y, z) \mathrm{d} y \\
+	= & \int_\alpha^\beta\left[P(x(t), y(t), \varphi(x(t), y(t))) x^{\prime}(t)+Q\left(x(t), y(t), \varphi(x(t), y(t)) y^{\prime}(t)\right)\right] \mathrm{d} t,
+\end{aligned}
+$$
+$$
+\begin{aligned}
+	& \oint_L P(x, y, \varphi(x, y)) \mathrm{d} x+Q(x, y, \varphi(x, y)) \mathrm{d} y \\
+	= & \int_\alpha^\beta\left[P(x(t), y(t), \varphi(x(t), y(t))) x^{\prime}(t)+Q\left(x(t), y(t), \varphi(x(t), y(t)) y^{\prime}(t)\right)\right] \mathrm{d} t
+\end{aligned}
+$$
+所以原等式成立.\\
+(2) 同 (1), 两边直接计算即可.\\
+5.1.4 提示: 由 $L$ 的方程消去z得其在 $x o y$ 面上的投影曲线(椭圆): $\frac{\left(\frac{x}{a}-\frac{1}{2}\right)^2}{\left(\frac{1}{2}\right)^2}+$ $\frac{y^2}{\left(\frac{b}{\sqrt{2}}\right)^2}=1$, 将 $L$ 化为参数方程: $x=\frac{a}{2}(1+\cos \theta), y=\frac{b}{\sqrt{2}}, z=\frac{c}{2}(1-\cos \theta)(\theta: 0 \rightarrow \pi)$, 再直接计算.\\
+习题 $\mathbf{5 . 2}$
+(A)
+5.2.1\\
+(1) 0 ;\\
+(2) -12 ;\\
+(3) 0 ;\\
+(4) $\frac{3 \pi}{2}$;\\
+(5) $\frac{\pi}{2} m a^2$;\\
+(6) $\frac{\pi}{2}-\sqrt{5}+\frac{1}{2} \ln (\sqrt{5}+2)$;\\
+(7) $3+3(\pi-1) e^\pi+\frac{2}{3} \pi^3-\sin 2+2 \cos 2$;\\
+(8) $\frac{211}{4}+\sin 3-4 \cos 3$.\\
+5.2.2\\
+(1) $\frac{3 \pi a b}{8}$;\\
+(2) $\frac{a^2}{6}$;\\
+(3) $\frac{3 a^2}{2}$;\\
+(4) $a^2$\\
+(5) 令 $y=t x$, 将曲线化为参数方程:\\
+$$
+L: x=\frac{1+t^2}{1+t^3}, y=\frac{t\left(1+t^2\right)}{1+t^3}, 0 \leq t<+\infty,
+$$
+曲线在第一象限内的起点为 $(1,0)$, 终点为 $(0,1)$. 在曲线上有
+$$
+x \mathrm{~d} y-y \mathrm{~d} x=\frac{\left(1+t^2\right)^2}{\left(1+t^3\right)^2} \mathrm{~d} t, 0 \leq t<+\infty
+$$
+在两坐标轴上, 均有 $x \mathrm{~d} y-y \mathrm{~d} x=0$, 于是
+$$
+S_D=\frac{1}{2} \oint_D x \mathrm{~d} y-y \mathrm{~d} x=\frac{1}{2} \oint_L x \mathrm{~d} y-y \mathrm{~d} x=\frac{1}{2} \int_0^{+\infty} \frac{\left(1+t^2\right)^2}{\left(1+t^3\right)^2} \mathrm{~d} t=\frac{1}{3}+\frac{4 \sqrt{3}}{27} \pi
+$$
+5.2.3 $ \frac{\pi}{2}$\\
+5.2.4\\
+(1) -14 ;\\
+(2) $\sqrt{13}-1$.\\
+5.2.5\\
+(1) $I=0$;\\
+(2) $I=2 \pi$;\\
+(3) $0<a<1$ 时 $I=0 ; a>1$ 时 $I=-2 \pi$;\\
+(4) 同(3).\\
+5.2.6 $\frac{e-1}{2}$.\\
+5.2.7 原式 $=2 S$, 其中 $S$ 为 $L$ 所围区域的面积.\\
+5.2.9 由于 $X \mathrm{~d} Y-Y \mathrm{~d} X=(a d-b c)(x \mathrm{~d} y-y \mathrm{~d} x)$, 故 $I=\frac{1}{2 \pi} \oint_L P(x, y) \mathrm{d} x+Q(x, y) \mathrm{d} y$, 其中
+$$
+P(x, y)=\frac{-(a d-b c) y}{(a x+b y)^2+(c x+d y)^2}, \quad Q(x, y)=\frac{(a d-b c) x}{(a x+b y)^2+(c x+d y)^2}
+$$
+经计算得: $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}=-\frac{(a d-b c)\left[\left(a^2+c^2\right) x^2-\left(b^2+d^2\right) y^2\right]}{(a x+b y)^2+(c x+d y)^2}$;\\
+因为 $a d-b c \neq 0$, 故只有原点 $O(0,0)$ 使 $X^2+Y^2=0$. 取闭曲线 $l:(a x+b y)^2+(c x+$ $d y)^2=r^2(r>0, r$ 允分小), 由Green公式得:
+$$
+\begin{aligned}
+	I & =\frac{1}{2 \pi} \oint_L P \mathrm{~d} x+Q \mathrm{~d} y=\frac{1}{2 \pi} \oint_i P \mathrm{~d} x+Q \mathrm{~d} y \\
+	& =\frac{1}{2 \pi r^2} \oint_1-(a d-b c) y \mathrm{~d} x+(a d-b c) x \mathrm{~d} y \\
+	& =\frac{a d-b c}{2 \pi r^2} \oint_l-y \mathrm{~d} x+x \mathrm{~d} y \\
+	& =\frac{a d-b c}{\pi r^2} \iint_D \mathrm{~d} x \mathrm{~d} y \quad(D \text { 为l所围区域 })
+\end{aligned}
+$$
+再令: $u=a x+b y, v=c x+\mathrm{d} y$, 即作变换
+$$
+T:\left\{\begin{array}{l}
+	x=x(u, v) \\
+	y=y(u, v)
+\end{array}\right.
+$$
+所以
+$$
+J=\frac{\partial(x, y)}{\partial(u, v)}=1 / \frac{\partial(u, v)}{\partial(x, y)}=1 /\left|\begin{array}{ll}
+	a & b \\
+	c & d
+\end{array}\right|=\frac{1}{a d-b c}
+$$
+即得:
+$$
+I=\frac{a d-b c}{\pi r^2} \iint_{u^2+v^2=r^2} \frac{1}{|a d-b c|} \mathrm{d} u \mathrm{~d} v=\frac{\operatorname{sgn}(a d-b c)}{\pi r^2} \iint_{u^2+r^2=r^2} \mathrm{~d} u \mathrm{~d} v=\operatorname{sgn}(a d-b c) .
+$$
+5.2.10 -4.\\
+5.2.12\\
+证明: (1)\\
+$$
+\begin{aligned}
+	& \text { 左 }=\iint_D\left(e^{\sin y}+e^{-\sin x}\right) \mathrm{d} x \mathrm{~d} y, \\
+	& \text { 右 }=\iint_D\left(e^{-\sin y}+e^{\sin x}\right) \mathrm{d} x \mathrm{~d} y ;
+\end{aligned}
+$$
+因为 $D=[0, \pi] \times[0, \pi]$ 关于 $y=x$ 对称(具有轮换性), 所以:左 $=$ 右.\\
+(2) 提示: 化为定积分, 再对被积函数作Taylor展开.\\
+5.2.13
+(1) $\frac{1}{3} x^3+x^2 y-x y^2-\frac{1}{3} y^3+C$;\\
+(2) $\frac{1}{2 \sqrt{2}} \arctan \frac{3 y-x}{2 \sqrt{2} x}+C$;\\
+(3) 当 $(x, y) \neq(0,0)$ 时, 有
+$$
+\begin{array}{r}
+	\frac{\partial}{\partial x}\left(\ln \frac{1}{r}\right)=-\frac{x}{r^2}, \quad \frac{\partial}{\partial y}\left(\ln \frac{1}{r}\right)=-\frac{y}{r^2}, \\
+	\frac{\partial^2}{\partial x^2}\left(\ln \frac{1}{r}\right)=-\frac{r^2-2 x^2}{r^4}, \quad \frac{\partial^2}{\partial y^2}\left(\ln \frac{1}{r}\right)=-\frac{r^2-2 y^2}{r^4} ;
+\end{array}
+$$
+即, $\frac{\partial^2}{\partial x^2}\left(\ln \frac{1}{r}\right)+\frac{\partial^2}{\partial y^2}\left(\ln \frac{1}{r}\right)=0$
+所以 $\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=-\frac{\partial^{n+m}}{\partial x^n \partial y^m}\left[\frac{\partial^2}{\partial x^2}\left(\ln \frac{1}{r}\right)+\frac{\partial^2}{\partial y^2}\left(\ln \frac{1}{r}\right)=0\right] \equiv 0$.\\
+故在任何不含原点的单联通区域中, $P \mathrm{~d} x+Q \mathrm{~d} y$ 都是某函数 $u(x, y)$ 的全微分, 且对 上半平面上的点 $(x, y)(y>0)$, 可取
+$$
+\begin{aligned}
+	u(x, y) & =\int_{(0,1)}^{(x, y)} P \mathrm{~d} x+Q \mathrm{~d} y+C=\int_0^x P(x, y) \mathrm{d} x+\int_1^y Q(x, y) \mathrm{d} y+C \\
+	& =\int_0^x \frac{\partial^{n+n+1}}{\partial x^{n+2} \partial y^{m-1}}\left(\ln \frac{1}{r}\right) \mathrm{d} x-\int_1^y\left[\frac{\partial^{n+m+1}}{\partial x^{n-1} \partial y^{n+2}}\left(\ln \frac{1}{r}\right)\right]_{x=0} \mathrm{~d} y+C \\
+	& =\frac{\partial^{n+m}}{\partial x^{n+1} \partial y^{m-1}}\left(\ln \frac{1}{r}\right)-\left[\frac{\partial^{n+m}}{\partial x^{n+1} \partial y^{n-1}}\left(\ln \frac{1}{r}\right)\right]_{x=0} \\
+	& -\left[\frac{\partial^{n-m}}{\partial x^{n-1} \partial y^{m+1}}\left(\ln \frac{1}{r}\right)\right]_{x=0}+\left[\frac{\partial^{n+m}}{\partial x^{n-1} \partial y^{m+1}}\left(\ln \frac{1}{r}\right)\right]_{x=0, y=1}+C \\
+	& =\frac{\partial^{n+m-1}}{\partial x^n \partial y^{m-1}}\left(\frac{\partial}{\partial x}\left(\ln \frac{1}{r}\right)\right)-\frac{\partial^{n+m-2}}{\partial x^{n-1} \partial y^{m-1}}\left[\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right) \ln \frac{1}{r}\right]_{x=0}+C_1 \\
+	& =\frac{\partial^{n+m-1}}{\partial x^n \partial y^{m-1}}\left(-\frac{x}{r^2}\right)+C_1 \\
+	& =\frac{\partial^{n+m-1}}{\partial x^n \partial y^{m-1}}\left(\frac{\partial}{\partial y}\left(\arctan \frac{x}{y}\right)\right)+C_1 \\
+	& =\frac{\partial^{n+m}}{\partial x^n \partial y^m}\left(\arctan \frac{x}{y}\right)+C_1
+\end{aligned}
+$$
+其中 $C_1=\left[\frac{\partial^{n+m}}{\partial x^{n-1} \partial y^{m+1}}\left(\ln \frac{1}{r}\right)\right]_{x=0, y=1}+C$ 是常数.
+同理, 对下半平面的点 $(x, y)(y<0)$, 有
+$$
+u(x, y)=\int_{(0,-1)}^{(x, y)} P \mathrm{~d} x+Q \mathrm{~d} y=\frac{\partial^{n+n}}{\partial x^n \partial y^{m i}}\left(\arctan \frac{x}{y}\right)+C_2,
+$$
+其中 $C_2=\left[\frac{\partial^{n+m}}{\partial x^{n-1} \partial y^{m+1}}\left(\ln \frac{1}{r}\right)\right]_{x=0, y=1}+C^{\prime}$.\\
+5.2.14\\
+(1) $\frac{1}{3} x^3-x y+2 \cos y=C$;\\
+(2) $x+\sin (x y)=C$;\\
+(3) $x e^y+\frac{y}{x}=C$.\\
+5.2.15\\
+(1) $\lambda=\frac{1}{y^2}, \frac{1}{2} x^2+\frac{x}{y}=C$.\\
+(2) $\lambda=-\frac{1}{x^4}, e^x+\frac{y^2}{x^2}=C$.\\
+5.2.16 $f(x) f\left(2 \cos x+x^2-2\right.$.\\
+5.2.17 $u=\sqrt[3]{\frac{x}{2}}$\\
+5.2.18\\
+(1) $f(x)=5 e^{x-1}-2(x+1)$;\\
+(2) 0 .\\
+5.2.19f $f\left(x^2-y^2\right)=1-\frac{1}{x^2-y^2}$.\\
+5.2.20\\
+(1) (略)\\
+(2) $\varphi(x)=-x^2$;\\
+(3) 0 .\\
+5.2.21 $2 \pi$.
+(B)
+5.2.1 提示: 利用 $\vec{n} \mathrm{~d} s=(\mathrm{d} y,-\mathrm{d} x)$ 推出 $\oint_L \frac{\partial u}{\partial n} d s=\iint_D\left(u_{x x}+u_{y y}\right) d x d y$.\\
+5.2.2 提示: 利用上题.\\
+5.2.3\\
+取 $\varepsilon$ 任意小, 作圆周 $l: x^2+y^2=\varepsilon^2$, 使其在 $L$ 所围成区域内部. 记 $L$ 与 $l$ 围成的 区域为 $D_1, l$ 的内部区域为 $D_s, l$ 取顺时针方向. 由
+$$
+P=\frac{x v-y u}{x^2+y^2}, Q=\frac{x u+y v}{x^2+y^2}
+$$
+易知
+$$
+\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \equiv 0
+$$
+记原式左边为 $I$, 则
+$$
+\begin{aligned}
+	I & =\oint_L+\oint_i+\oint_i=\oint_{L+i}-\oint_i=\iint_{D_i}\left(Q_x-P_y\right) \mathrm{d} \sigma-\oint_i \\
+	& =-\oint_i=-\frac{1}{\varepsilon^2} \oint_i(x v-y u) \mathrm{d} x+(x u+y v) \mathrm{d} y \\
+	& =\frac{1}{\varepsilon^2} \iint_{D_e}\left[\frac{\partial}{\partial x}(x u+y v)-\frac{\partial}{\partial y}(x v-y u)\right] \mathrm{d} x \mathrm{~d} y \\
+	& =\frac{1}{\varepsilon^2} \iint_{D_s} 2 u(x, y) \mathrm{d} x \mathrm{~d} y=\frac{2}{\varepsilon^2} u(\xi, \eta) \cdot \iint_{D_s} \mathrm{~d} x \mathrm{~d} y \\
+	& =\frac{2}{\varepsilon^2} u(\xi, \eta) \cdot \pi \varepsilon^2=2 \pi u(\xi, \eta) ;
+\end{aligned}
+$$
+令 $\varepsilon \rightarrow 0^{+}$, 由 $u$ 的联系性知:
+$$
+I=\lim _{\varepsilon \rightarrow 0^{+}} 2 \pi u(\xi, \eta)=2 \pi u(0,0) .
+$$
+5.2.4\\
+ 设 $D$ 为半圆域: $y_0 \leq y \leq y_0+\sqrt{R^2-\left(x-x_0\right)^2}$, 由 Green公式得
+$$
+\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) d x d y=\int_{x_0-R}^{x_0+R} P(x, y) d x
+$$
+再由积分中值定理, 得
+$$
+\left.\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y_0}\right)\right|_{(\xi, j)} \cdot \frac{\pi R^2}{2}=P\left(\bar{\xi}, y_0\right) \cdot 2 R, \quad \forall R>0 .
+$$
+其中, $(\xi, \eta) \in D, \bar{\xi} \in\left[x_0-R, x_0+R\right]$. 令 $R \rightarrow 0^{+}$, 即 $P\left(x_0, y_0\right)=0$, 再由 $\left(x_0, y_0\right)$ 的任 意性, 得 $P(x, y) \equiv 0$. 从而
+$$
+\iint_D \frac{\partial Q}{\partial x} d x d y=0 .
+$$
+由于 $D$ 是任意的半圆, 易知 $\frac{\partial Q}{\partial x} \equiv 0$.\\
+5.2.5 
+\\提示: 取 $\varepsilon>0$ 充分小, 使得曲线 $A x^2+2 B x y+C y^2=\varepsilon^2$ 在圆 $x^2+y^2=$ $R^2$ 内部, 利用Green公式将原式转化为求椭圆域 $A x^2+2 B x y+C y^2 \leq \varepsilon^2$ 的面积. 可 利用(B)4.2.2题的结论.\\
+习题 5.3\\
+\centerline{(A)}
+5.3.1 $\quad 0$.\\
+5.3.2 $\frac{\pi+1}{6}$.\\
+5.3.3$-\frac{2}{15} \pi R^5$\\
+5.3.4 $\frac{1}{2} \pi R^3$(合一投影法).\\
+5.3 5 $\pi$.\\
+5.3.6 $\pi r^2 R$ \\
+5.3.7 $\frac{8}{3}(a+b+c) \pi R^3$.\\
+5.3.8 $-\frac{1}{2} \pi R^3$.\\
+5.3.9 $\frac{1}{2}$.\\
+5.3.10 $a b c \cdot\left[\frac{f(a)-f(0)}{a}+\frac{g(b)-g(0)}{b}+\frac{h(c)-h(0)}{c}\right]$.\\
+5.3.11 $\frac{4 \pi}{3}\left(ab+bc+ac\right)(\frac{1}{a}+\frac{1}{b}+\frac{1}{c})$.\\
+(注：椭球面积公式：$S = \frac{4\pi}{3}(ab+bc+ac)$)\\
+5.3.12 $ \frac{1}{2}$.\\
+\centerline{(B)}
+5.3.1 $4 \pi \tan 1$.\\
+5.3.2 提示: 化为第一型曲面积分.\\
+习题 5.4\\
+(A)\\
+5.4.1
+(1) $\operatorname{div} \vec{F}=y+2 y z+3 x z^2$;\\
+(2) $\operatorname{div} \vec{F}=6 x y z$;\\
+(3) $\operatorname{div} \vec{F}=0$.\\
+5.4.2\\
+(1) $\operatorname{rot} \vec{F}=\overrightarrow{0}$;\\
+(2) $\operatorname{rot} \vec{F}=-2(z, x, y)$;\\
+(3) $\operatorname{rot} \vec{F}=(z \cos (y z), x y,-y \sin (x y)-x z)$.\\
+5.4.3 $\nabla f(r)=\frac{f^{\prime}(r)}{r} \vec{r}, \quad \nabla \cdot(f(r) \vec{r})=3 f(r)+r f^{\prime}(r), \quad \nabla \times((f(r) \vec{r})=\overrightarrow{0}$.\\
+5.4.5\\
+(1) $\frac{1}{2}$;\\
+(2) $\frac{12}{5} \pi R^5$;\\
+(3) $-\left(\frac{R}{4}+\frac{2}{3}\right) \pi R^3$;\\
+(4) $\left(\frac{h}{4}-1\right) \pi h^3$;\\
+(5) $\frac{12}{7} \pi$;\\
+(6) $\frac{32}{3} \pi$.\\
+5.4.6$-\frac{128}{5} \pi$.\\
+5.4.7 0 .\\
+5.4.8 有误，改为证明：$V = \frac{1}{3}\oiint_S(x\cos \alpha+y \cos \beta+ z \cos \gamma)\mathrm{d}S$\\
+5.4.9 $-\frac{\pi h^4}{2}$.\\
+5.4.10 由Gauss公式，结论是显然的.\\
+5.4.11 $ 2\pi$.\\
+5.4.12 $ \pi R^2$.\\
+5.4.13\\
+(1) 0 ;\\
+(2) $4 \pi$;\\
+解: 依题意知 $P=\frac{x}{\left(x^2+y^2+z^2\right)^{3 / 2}}, Q=\frac{y}{\left(x^2+y^2+z^2\right)^{3 / 2}}, R=\frac{z}{\left(x^2+y^2+z^2\right)^{3 / 2}}$;\\
+ 易知, 当 $(x, y, z) \neq(0,0,0)$ 时, $\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z} \equiv 0$. 取球面 $S_\epsilon:\\ x^2+y^2+z^2=\varepsilon^2(\varepsilon>$ 0 ), 方向取内侧, $S_1$ 与 $S_2$ 围成立体 $\Omega$, 则\\
+$$
+\begin{aligned}
+	I & =\oiint_S \frac{x \mathrm{d} x \mathrm{d} y+y \mathrm{d} z \mathrm{d} x+z \mathrm{d} x \mathrm{d} y}{\left(x^2+y^2+z^2\right)^{3 / 2}}=\oiint_S+\oiint_{S_e}-\oiint_{S_{\varepsilon}} \\
+	& =\oiint_{S+S_e}-\oiint_{S_{\varepsilon}}=\iiint_{\Omega} 0 \mathrm{d} V-\frac{1}{\varepsilon^3} \oiint_{S_{\varepsilon}} x \mathrm{d}x \mathrm{d} y+y \mathrm{d} z \mathrm{d} x+z \mathrm{d} x \mathrm{d} y \\
+	& =\frac{1}{\varepsilon^3} \iiint_{x^2+y^2+z^2 \leq z^2} 3 \mathrm{~d} V=\frac{3}{\varepsilon^3} \cdot \frac{4}{3} \pi \varepsilon^3=4 \pi .
+\end{aligned}
+$$\\
+(3) $2 \pi$;\\
+(4) $2 \pi$.\\
+5.4.14 $-\frac{4 \sqrt{6} \pi}{15}$\\
+5.4.15\\
+(1) $u=-\frac{1}{3}\left(x^3+y^3+z^3\right)-2 x y z+C$;\\
+(2) $u=x\left(1-\frac{1}{y}+\frac{y}{z}\right)+C$.\\
+5.4.16\\
+(1) $\sin 1+e-\frac{1}{2}$;\\
+(2) $\frac{1}{2} \int_{x_0^2+y_0^2+z_0^2}^{x_1^2+y_1^2+z_1^2} f(\sqrt{t}) d t$.\\
+5.4.17 0.\\
+5.4.18 $\frac{1}{3} h^3$.\\
+5.4.19\\n
+(1) $\frac{3}{2}$;\\
+(2) $2 S$.\\
+5.4.20 $-2\pi a(a+h)$\\
+5.4.21 $-\frac{9}{2} a^2$\\
+5.4.22 $2\pi r^2 R $\\
+5.4.23 $\frac{\pi}{2} f^{\prime}(0)$.\\
+5.4.24 $\frac{\pi}{6}$(提示：$\iint_\Sigma\nabla f \cdot \left\{x, y ,z\right\}\mathrm{d}S=\iint_\Sigma(x^2+y^2+z^2)\nabla f \cdot \left\{x, y ,z\right\}\mathrm{d}S$).\\\\
+\centerline{(B)}\\
+5.4.1 1 .\\
+5.4.2 由三重积分的球坐标变换公式, 得\\
+$$
+\begin{aligned}
+	\iiint_V f(x, y, z, t) \mathrm{d} V & =\int_0^t \mathrm{~d} t \int_0^{2 \pi} \mathrm{d} \theta \int_0^\pi f(t \sin \varphi \cos \theta, t \sin \varphi \sin \theta, t \cos \varphi) t^2 \sin \varphi \mathrm{d} \varphi \\
+	= & \int_0^t\left(\oiint_S f(x, y, z, t) \mathrm{d} S\right) \mathrm{d} t, \quad \text { (教材中公式(4.5.11)) } \\
+	\Rightarrow \frac{\mathrm{d}}{\mathrm{d} t} \iiint_V f(x, y, z, t) \mathrm{d} V & =\oiint_S f(x, y, z, t) \mathrm{d} S+\int_0^t\left[\frac{\partial}{\partial t} \oiint_S f(x, y, z, t) \mathrm{d} S\right] \mathrm{d} t \\
+	& =\oiint_S f(x, y, z, t) \mathrm{d} S+\int_0^t\left[\oiint_S \frac{\partial f}{\partial t} \mathrm{~d} S\right] \mathrm{d} t \\
+	& =\oiint_S f(x, y, z, t) \mathrm{d} S+\iiint_V \frac{\partial f}{\partial t} \mathrm{~d} V .
+\end{aligned}
+$$\\
+5.4.3\\
+证: 先设 $S$ 不包围点 $(x, y, z)$, 且设 $\vec{n}=(\cos \alpha, \cos \beta, \cos \gamma)$, 则\\
+$$
+\begin{aligned}
+	\cos (\vec{r}, \bar{n}) & =\cos (\vec{r}, x) \cos \alpha, \cos (\vec{r}, y) \cos \beta+\cos (\vec{r}, z) \cos \gamma \\
+	& =\frac{\xi-x}{r} \cos \alpha+\frac{\eta-y}{r} \cos \beta+\frac{\theta-z}{r} \cos \gamma,
+\end{aligned}
+$$\\
+由Stockes公式有
+$$
+\iint_S \cos (\vec{r}, \bar{n}) \mathrm{d} S=\iint_S\left(\frac{\xi-x}{r} \cos \alpha+\frac{\eta-y}{r} \cos \beta+\frac{\theta-z}{r} \cos \gamma\right) \mathrm{d} S
+$$\\
+$$
+\begin{aligned}
+	& =\iiint_V\left[\frac{\partial}{\partial \xi}\left(\frac{\xi-x}{r}\right)+\frac{\partial}{\partial \eta}\left(\frac{\eta-y}{r}\right)+\frac{\partial}{\partial \theta}\left(\frac{\theta-z}{r}\right)\right] \mathrm{d} \xi \mathrm{d} \eta \mathrm{d} \theta \\
+	& =\iiint_V \frac{2}{r} \mathrm{~d} \xi \mathrm{d} \eta \mathrm{d} \theta,
+\end{aligned}
+$$\\
+故 $\iiint_V \frac{1}{r} \mathrm{~d} \xi \mathrm{d} \eta \mathrm{d} \theta=\frac{1}{2} \iint_S \cos (\vec{r}, \bar{n}) \mathrm{d} S$.\\
+再设 $S$ 包围点 $(x, y, z)$, 这时不能直接应用Guass公式. 作以点 $(x, y, z)$ 为球心, 半径 为 $\varepsilon\left(\varepsilon\right.$ 充分小)的闭球 $V_{\varepsilon}$, 其边界为球面 $S_{\varepsilon}$, 则对 $V-V_{\varepsilon}$ 应用Gauss 公式, 有\\
+$$
+\begin{aligned}
+	& \iint_S \cos (\vec{r}, \bar{n}) \mathrm{d} S+\iint_{S_2} \cos (\vec{r}, \bar{n}) \mathrm{d} S \\
+	= & \iiint_{V-V_x}\left[\frac{\partial}{\partial \xi}\left(\frac{\xi-x}{r}\right)+\frac{\partial}{\partial \eta}\left(\frac{\eta-y}{r}\right)+\frac{\partial}{\partial \theta}\left(\frac{\theta-z}{r}\right)\right] \mathrm{d} S \\
+	= & 2 \iiint_{V-V_\alpha} \frac{1}{r} \mathrm{~d} \xi \mathrm{d} \eta \mathrm{d} \theta .
+\end{aligned}
+$$\\
+在 $S_E$ 上, $\vec{n}$ 的方向与 $\vec{r}$ 的方向相反, 故 $\cos (\vec{r}, \bar{n})=-1$; 于是,
+$$
+\iint_{S_e} \cos (\vec{r}, \bar{n}) \mathrm{d} S=-4 \pi \varepsilon^2 \text {, 令 } \varepsilon \rightarrow 0^{+} \text {即得原等式. }
+$$\\
+5.4.4\\
+证: (1) $\iint_S \frac{\partial u}{\partial n} \mathrm{~d} S=\iint_S \nabla u \cdot \vec{n} \mathrm{~d} S=\iiint_V \nabla \cdot \nabla u \mathrm{~d} V=\iiint_V \Delta u \mathrm{~d} V$\\
+(2) 将教材例5.4.6中Green第一公式中的 $u, v$ 对换, 再两式相减.\\
+5.4 .5\\
+解 设曲线 $C:\left\{\begin{array}{l}x^2+4 y^2=1, \\ z=0\end{array}\right.$, 曲面 $S: x^2+4 y^2+z^2=1(z \geq 0), E$ 是 $S$ 所围成 的区域. 则由Stokes公式与题设,有
+$$
+\int_C G(x, y) \cdot \mathrm{d} \vec{r}=\int_C \vec{F}(x, y, z) \cdot \mathrm{d} \vec{r}=\iint_S \operatorname{rot} \vec{F} \cdot \vec{n} \mathrm{~d} s=0 ;
+$$
+另一方面, 注意到在 $C$ 上, $x^2+4 y^2=1$, 得到
+$$
+\int_C G(x, y) \cdot \mathrm{d} \vec{r}=\int_C(-y, x) \cdot \mathrm{d} \vec{r}=\iint_E 2 \mathrm{~d} x \mathrm{~d} y=2|E| \neq 0,
+$$
+矛盾, 因而 $\vec{F}$ 不存在.\\
+5.4.6\\
+解: 设 $\Omega$ 是 $S$ 和平面 $S_1: z=z_0\left(\left(x-x_0\right)^2+\left(y-y_0\right)^2 \leq a^2\right)$ 围成的立体, $D$ 为 $V$ 在 $O_{x y}$ 面上的投影区域: $\left(x-x_0\right)^2+\left(y-y_0\right)^2 \leq a^2$, 则
+$$
+\begin{aligned}
+	0 & =\iint_S P \mathrm{~d} y \mathrm{~d} z+Q \mathrm{~d} z \mathrm{~d} x+R \mathrm{~d} x \mathrm{~d} y=\oiint_{S+S_1}-\oiint_{S_1} \\
+	& =\iiint_V\left(P_x+Q_y+R_z\right) \mathrm{d} V+\iint_D R \mathrm{~d} x \mathrm{~d} y \\
+	& =\left.\left(P_x+Q_y+R_z\right)\right|_{(\xi, n, \theta)} \cdot \frac{2 \pi a^3}{3}+\pi a^2 \cdot R\left(\xi_1, \eta_1, z_0\right), \quad(\xi, \eta, \theta) \in V,\left(\xi_1, \eta_1\right) \in D .
+\end{aligned}
+$$\\
+两边除以 $a^2$, 且令 $a \rightarrow 0$ 得, $R\left(x_0, y_0, z_0\right)=0$; 类似地得 $\left.\left(P_x+Q_y\right)\right|_{\left(x_0, y_0, z_0\right)}=0$; 由 $x_0, y_0, z_0$ 的任意性知, $R(x, y, z)=0, P_x+Q_y \equiv 0$.\\
+习题 5.5\\
+\centerline{(A)}\\
+5.5.1\\
+$x^2+y^2=k z^2, \quad x^2+y^2=2 z^2$.\\
+5.5.2\\
+证明: $\mathbf{E}=\frac{q}{4 \pi \varepsilon_0 r^3}(x, y, z)=(P, Q, R)$, 其向量线方程为 $\frac{d x}{P}=\frac{d y}{Q}=\frac{d z}{R}$, 即
+$$
+\frac{d x}{x}=\frac{d y}{y}=\frac{d z}{z}
+$$\\
+解得向量线的方程为:
+$$
+\left\{\begin{array}{l}
+	x=C_1 y \\
+	y=C_2 z
+\end{array}\right.
+$$\\
+5.5.3 div $\vec{F}=0, \operatorname{rot} \vec{F}=(-2 y z,-2 x z, 0)$.\\
+5.5.4 $\operatorname{div}(\operatorname{grad} u)=\Delta u=u_{x x}+u_{y y}+u_{z z}=\frac{1}{x^2+y^2+z^2}, \operatorname{rot}(\operatorname{grad} u)=0$.\\
+5.5.5\\
+解: (1) $\Phi=\iiint_S \mathbf{F} \cdot \mathbf{d S}=0$.
+补充平面: $S_1: z=0, x^2+y^2 \leq a^2$, 取下側, $S_2: z=h, x^2+y^2 \leq a^2$, 取上侧. $S$ 和 $S_1 、 S_2$ 围成立体 $V$, 则由Gauss公式及对称性
+$$
+\begin{aligned}
+	\Phi & =\iint_{S+S_1+S_2}-\iint_{S_1}-\iint_{S_2}=\iiint_V \\
+	& =\iiint_V 6 x y z d x d y d z-0-\iint_{x^2+y^2 \leq a^2} x y h^2 d x d y=0 .
+\end{aligned}
+$$\\
+(2) $\Phi=\iiint_S \mathbf{F} \cdot \mathbf{d} \mathbf{S}=\iiint_V 6 x y z d V=0$.\\
+5.5.6 $a=2, b=-1, c=-2$.\\
+5.5 .7\\
+解: $L$ 的参数方程为 $L: x=\cos t, y=\sin t, z=0, t \in[0,2 \pi]$,
+$$
+\begin{aligned}
+	\Gamma & =\oint_L \mathbf{F} \cdot d \mathbf{r}=\oint(x-z) d x+\left(x^3+y z\right) d y-3 x y^2 d z \\
+	& =\int_0^{2 \pi}\left[(\cos t) d(\cos t)+\left(\cos ^3 t\right) d(\sin t)+0\right]=\frac{3 \pi}{4} .
+\end{aligned}
+$$\\
+5.5 .8\\
+解：因为
+$$
+\nabla \times \vec{F}=\left|\begin{array}{ccc}
+	\vec{i} & \vec{j} & \vec{k} \\
+	\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+	x^2-2 y z & y^2-2 z x & z^2-2 x y
+\end{array}\right|=(0,0,0),
+$$\\
+所以 $\vec{F}$ 是有势场, 其势函数为
+$$
+\begin{aligned}
+	u(x, y, z) & =\int_{(0,0,0)}^{(x, y, z)} \vec{F} \cdot d \vec{r} \\
+	& =\int_{(0,0,0)}^{(x, y, z)}\left[\left(x^2-2 y z\right) d x+\left(y^2-2 z x\right) d y+\left(z^2-2 x y\right) d z\right]\\
+	& =\int_{(0,0,0)}^{(x, y, z)}\left[\frac{1}{3} d\left(x^3+y^3+z^3\right)+2 d(x y z)\right] \\
+	& =\int_{(0,0,0)}^{(x, y, z)} d\left[\frac{1}{3}\left(x^3+y^3+z^3\right)+2 x y z\right] \\
+	& =\frac{1}{3}\left(x^3+y^3+z^3\right)+2 x y z .
+\end{aligned}
+$$\\
+5.5.9 $u=x y z(x+y+z)+C$.\\
+\centerline{(B)}\\
+5.5.1\\
+解: 设 $\vec{n}=(\cos \alpha, \cos \beta, \cos \gamma)$ 为曲面 $S$ 的单位外法向量, 则 $\mathrm{d} \vec{S}=\vec{n} \mathrm{~d} S$.\\
+$1^o$ : 当原点 $(0,0,0)$ 在 $S$ 的外部时, 由Guass公式得:
+$$
+\begin{aligned}
+	& \oiint_S \vec{F} \mathrm{~d} \vec{S}=\oiint_S \vec{F} \cdot \vec{n} \mathrm{~d} S=\oiint_S \frac{x \cos \alpha+y \cos \beta+z \cos \gamma}{r^3} \mathrm{~d} S \\
+	= & \iiint_V\left[\left(\frac{1}{r^3}-\frac{3 x^2}{r^5}\right)+\left(\frac{1}{r^3}-\frac{3 y^2}{r^5}\right)+\left(\frac{1}{r^3}-\frac{3 z^2}{r^5}\right)\right] \mathrm{d} V \\
+	= & \iiint_V \mathrm{~d} V=0 ;
+\end{aligned}
+$$\\
+$2^o$ : 当原点 $(0,0,0)$ 在 $S$ 的内部时, 作小球面 $S_{\varepsilon}: r=\varepsilon, S_{\varepsilon}$ 围成区域 $V_{\varepsilon}$ ( $\varepsilon$ 充分 小); 取内侧, 在 $S$ 和 $S_{\varepsilon}$ 之间的区域 $V-V_\delta$ 上用Guass公式得:
+$$
+\begin{aligned}
+	\oiint_S & =\oiint_{S+S_{\varepsilon}}-\oiint_{S_e}=\iiint_{V-V_e}-\oiint_{S_{\varepsilon}}=0-\frac{1}{\varepsilon^3} \oiint_{S_k}(x \cos \alpha+y \cos \beta+z \cos \gamma) \mathrm{d} S \\
+	& =\frac{1}{\varepsilon^3} \iiint_{V_k} 3 \mathrm{~d} V=\frac{1}{\varepsilon^3} \cdot 3 \cdot \frac{4}{3} \pi \varepsilon^3=4 \pi
+\end{aligned}
+$$\\
+$3^o$ : 当原点 $(0,0,0)$ 在曲面 $S$ 上时, 则 $\oiint_S \vec{F} \mathrm{~d} \vec{S}=\oiint_S \vec{F} \cdot \vec{n} \mathrm{~d} S$ 为无界函数的 曲面积分 (广义曲面积分), 且 $|\vec{F} \cdot \vec{n}| \leq \frac{1}{r^2}$; 若曲面 $S$ 在点 $(0,0,0)$ 是光滑的, 由类似于 无界函数的二重积分的讨论可知, 广义积分 $\oiint_S \vec{F} \mathrm{~d} \vec{S}$ 收敛. 取 $S_{\varepsilon}$ 为以 $(0,0,0)$ 为球 心, 半径为 $\varepsilon$ 的球面; $S_1$ 表示从 $S$ 上不被 $S_{\varepsilon}$ 所包围的部分, $S_2$ 表示 $S_{\varepsilon}$ 上含在 $S$ 内的那 部分, 则
+$$
+\oiint_S \vec{F} \mathrm{~d} \vec{S}=\lim _{\delta \rightarrow 0^{+}} \iint_{S_1} \vec{F} \mathrm{~d} \vec{S}, \iint_{S_1+S_2} \vec{F} \mathrm{~d} \vec{S}=0 \text { (由(1)可得), }
+$$
+其中 $S_1$ 取外侧, $S_2$ 取内侧.\\
+因为曲面 $S$ 在点 $(0,0,0)$ 是光滑的, 在点 $(0,0,0)$ 有切平面, 所以 $S$ 在点 $(0,0,0)$ 的 附近可用切平面近似代替, 即 $S_2$ 可看作 $S_{\varepsilon}$ 的半个球面, 故
+$$\\
+\begin{aligned}
+	\oiint_S \vec{F} \mathrm{~d} \vec{S} & =\lim _{\varepsilon \rightarrow 0^{-}} \iint_{S_1} \vec{F} \mathrm{~d} \vec{S}=\lim _{\varepsilon \rightarrow 0^{+}}\left(-\iint_{S_2} \vec{F} \cdot \vec{n} \mathrm{~d} S\right) \\
+	& =\lim _{\varepsilon \rightarrow 0^{-}}\left(-\iint_{S_2} \frac{\vec{r}}{r^3} \cdot \frac{-\vec{r}}{r} \mathrm{~d} S\right)=\lim _{\varepsilon \rightarrow 0^{+}}\left(\iint_{S_2} \frac{1}{r^3} \mathrm{~d} S\right) \\
+	& =\lim _{\varepsilon \rightarrow 0^{-}} \frac{1}{\varepsilon^3} \cdot 2 \pi \varepsilon^2=2 \pi .
+\end{aligned}
+$$
+5.5 .1\\
+证: (1) $\oiint_S \frac{\partial u}{\partial n} d S=\oiint_S \nabla u \cdot \vec{n} d S=\iiint_{\Omega} \nabla^2 u d v=\iiint_{\Omega} 0 d v=0$.\\
+(2)
+$$
+\begin{aligned}
+	\oiint_S u \frac{\partial u}{\partial n} d S & =\iint_S u \nabla u \cdot \vec{n} d S=\iiint_{\Omega} \nabla(u \nabla u) d v \\
+	& =\iiint_{\Omega}\left(\nabla u \cdot \nabla u+\nabla^2 u\right) d v=\iiint_{\Omega} \nabla u \cdot \nabla u d v
+\end{aligned}
+$$
+\end{document}

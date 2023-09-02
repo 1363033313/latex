@@ -1,0 +1,153 @@
+\documentclass[a4paper,11pt,UTF8]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
+\usepackage{cleveref}
+\usepackage{esint}
+%opening
+\title{启明学院2018-2019学年第二学期}
+\author{《微积分下》期末A卷}
+
+\begin{document}
+
+\maketitle
+
+\noindent 一、填空题 (每空 4 分, 共 28 分)\\
+1、微分方程 $y^{\prime \prime}+2 y^{\prime}+8 y=0$ 的通解为\\
+2、设 $z=z(x, y)$ 是由 $f(x+z, y z)=0$ 所确定的函数, 其中 $f$ 具有连续且不为零的一阶偏导数,\\
+3、函数 $f(x, y)=x^2-y^2$ 在点 $(1,-1)$ 处沿方向 $\vec{l}=\{1,1\}$ 的方向导数 $\left.\frac{\partial f}{\partial l}\right|_{(1,-1)}=2 \sqrt{2}$.\\
+4、设 $f(x)$ 是周期为 $2 \pi$ 的函数, 且 $f(x)=\left\{\begin{array}{l}-1,-\pi \leq x<0, \\ e^x, 0 \leq x<\pi\end{array}, S(x)\right.$ 是 $f(x)$ 的 Fourier 展开式的和函数, 则 $S\left(\frac{\pi}{2}\right)=\underline{e^{\frac{\pi}{2}}}, S(\pi)=\frac{e^\pi-1}{2}$.\\
+7、设 $\mathrm{d} u=(y+2 x z) \mathrm{d} x+\left(x+z^2\right) \mathrm{d} y+\left(x^2+2 y z\right) \mathrm{d} z$, 则 $u(x, y, z)=\underline{u=x y+x^2 z+y^2 z+C}$.
+二、判断题 (每小题 2 分, 共 8 分). 请在正确说法相应的括号中画 “小”, 在错误说法的括号中画 “×”.\\
+8. 若无穷级数 $\sum_{n=1}^{\infty} a_n$ 收敛, 则 $\sum_{n=1}^{\infty} a_n^2$ 也必收敛.\\
+9. 二元函数 $f(x, y)$ 在点 $\left(x_0, y_0\right)$ 处不连续, 则偏导数 $\frac{\partial f}{\partial x}$ 和 $\frac{\partial f}{\partial y}$ 在 $\left(x_0, y_0\right)$ 处必定不存在.\\
+10. 设 $S: x^2+y^2+z^2=1(z \geq 0), S_1$ 是 $S$ 在第一卦限部分, 则 $\iint_S x y^2 z^3 \mathrm{~d} S=4 \iint_{S_1} x y^2 z^3 \mathrm{~d} S$.\\
+11. 设 $\left|u_n(x)\right| \leq v_n(x)\left(n \in N_{+}, x \in[a, b]\right), \sum_{n=1}^{\infty} v_n(x)$ 在 $[a, b]$ 上一致收敛, 则 $\sum_{n=1}^{\infty} u_n(x)$ 在 $[a, b]$ 上也一致收敛.\\
+三、解答题 (每小题 6 分, 共 12 分)\\
+12. 判断级数 $\sum_{n=1}^{\infty}(-1)^n \tan \left(\sqrt{n^2+1} \pi\right)$ 的玫散性, 是绝对收玫还是条件收敛?\\
+解: $\tan \left(\sqrt{n^2+1} \pi\right)=\tan \left(\sqrt{n^2+1} \pi-n \pi\right)=\tan \frac{\pi}{\sqrt{n^2+1}+n}$.
+而 $\left\{\tan \frac{\pi}{\sqrt{n^2+1}+n}\right\}$ 是单调减且趋于 0 的数列, 所以原级数收敛.
+又 $\tan \frac{\pi}{\sqrt{n^2+1}+n} \sim \frac{\pi}{\sqrt{n^2+1}+n} \sim \frac{\pi}{2 n}(n \rightarrow \infty)$, 而 $\sum_{n=1}^{\infty} \frac{\pi}{2 n}$ 发散, 所以 $\sum_{n=1}^{\infty}\left|(-1)^{n-1} \tan \left(\sqrt{n^2+1} \pi\right)\right|$ 发散, 故原级数条件收敛.\\
+13. 讨论含参变量积分 $I(x)=\int_0^{+\infty} \frac{\arctan (x y)}{x^2+y^2} \mathrm{~d} y$ 关于 $x$ 在 $[\delta,+\infty)(\delta>0)$ 上的一致收敛性.\\
+解: 当 $x \in[\delta,+\infty)(\delta>0)$ 时, 有 $\left|\frac{\arctan (x y)}{x^2+y^2}\right| \leq \frac{\pi}{2 x^2+y^2} \leq \frac{\pi}{2} \frac{1}{\delta^2+y^2}$,
+而 $\int_0^{+\infty} \frac{1}{\delta^2+y^2} \mathrm{~d} y$ 收敛, 所以, 有由 $\mathrm{M}$ 判别法知 $I(x)=\int_0^{+\infty} \frac{\arctan (x y)}{x^2+y^2} \mathrm{~d} y$ 关于 $x$ 在
+$[\delta,+\infty)(\delta>0)$ 是一致收敛.
+四、计算题（每小题 7 分, 共 28 分)\\
+14. $I=\iint_D\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y$, 其中 $D:|x|+|y| \leq 1$.\\
+解: 设 $D_1$ 是 $D$ 在第一象限的部分, 则 $D_1: 0 \leq x \leq 1,0 \leq y \leq 1-x$.
+由对称性及轮换性, 得
+$$
+\begin{aligned}
+	I & =\iint_D\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y=4 \iint_{D_1}\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d}=8 \iint_{D_Q} x^2 \mathrm{dxdy} \\
+	& =8 \int_0^1 x^2 d x \int_0^{1-x} \mathrm{~d} y=8 \int_0^1 x^2(1-x) d x=\frac{2}{3} .
+\end{aligned}
+$$\\
+15. \#计算曲面积分 $I=\iint_S x^2 y \mathrm{~d} z \mathrm{~d} x+\left(x+y^2 z\right) \mathrm{d} x \mathrm{~d} y$, 其中 $S$ 为下半球面 $z=-\sqrt{1-x^2-y^2}$ 的上侧. 解: 补充 $S_1: z=0\left(x^2+y^2 \leq 1\right)$, 取下侧: 则 $S$ 与 $S_1$ 国成下半单位球体 $\Omega$.\\
+由商斯公式, 得
+$$
+\begin{aligned}
+	I & =\iint_S x^2 y \mathrm{~d} z \mathrm{~d} x+\left(1+y^2 z\right) \mathrm{d} d y \\
+	& =\iint_{5+5} x^2 y \mathrm{~d} z \mathrm{~d} x+\left(1+y^2 z\right) \mathrm{d} d \mathrm{~d} y-\iint_5 x^2 y \mathrm{~d} z \mathrm{~d} x+\left(1+y^2 z\right) \mathrm{d} d \mathrm{~d} y \\
+	& =-\iiint_{\Omega}\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y \mathrm{~d} z-(-1) \iint_{x^2+y^2 \leq 1} \mathrm{~d} x \mathrm{~d} y \\
+	& =-\int_0^{2 \pi} d \theta \int_{\frac{\pi}{2}}^\pi \mathrm{d} \varphi \int_0^1(r \sin \varphi)^2 \cdot r^2 \sin \varphi \mathrm{d}+\pi \cdot 1^2 \text { (球坐标) } \\
+	& =-\frac{4 \pi}{15}+\pi=\frac{11 \pi}{15}
+\end{aligned}
+$$\\
+16. 设 $f(x)$ 在 $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ 内有连续的导函数, 曲线积分 $\int_L f^2(x) \sin y \mathrm{~d} x+(f(x)-x) \cos y \mathrm{~d} y$ 与路径无关, 且 $f(0)=0$, 求 $f(x)$ 及 $I=\int_{(0,0)}^{(1,1)} f^2(x) \sin y \mathrm{~d} x+(f(x)-x) \cos y \mathrm{~d} y$.\\
+解: 由曲线积分 $\int_t f^2(x) \sin y \mathrm{~d} x+(f(x)-x) \cos y \mathrm{~d} y$ 与路径无关, 得
+$$
+\frac{\partial[(f(x)-x) \cos y]}{\partial x}=\left(f^{\prime}(x)-1\right) \cos y=\frac{\partial\left[f^2(x) \sin y\right]}{\hat{y}}=f^2(x) \cos y,
+$$
+得
+$$
+f^{\prime}(x)=1+f^2(x) \text {. }
+$$
+$$
+\begin{aligned}
+	& \frac{\mathrm{d} f(x)}{1+f^2(x)} \mathrm{d} x, \quad \int \frac{d f(x)}{1+f^2(x)}=\int d x, \\
+	& \arctan f(x)=x+C, \arctan f(x)=x+C, f(x)=\tan (x+C) .
+\end{aligned}
+$$
+由 $f(0)=0$, 得 $C=0$, 所以 $f(x)=\tan x, x \in\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$.
+$$
+\begin{aligned}
+	I & =\int_{(0.0)}^{(1.1)} f^2(x) \sin y \mathrm{~d} x+(f(x)-x) \cos y \mathrm{~d} y \\
+	& =\int_{(0.0)}^{(1.1)} \tan ^2 x \sin y \mathrm{~d} x+(\tan x-x) \cos y \mathrm{~d} y \\
+	& =\int_0^1 0 \mathrm{~d} x+\int_0^1(\tan 1-1) \cos y \mathrm{~d} y=(\tan 1-1) \sin 1 .
+\end{aligned}
+$$\\
+17. 求幂级数 $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n}$ 的收玫域与和函数.\\
+解: 记 $u_n(x)=\frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n}$, 则
+$$
+\rho=\lim _{n \rightarrow \infty}\left|\frac{u_{n+1}(x)}{u_n(x)}\right|=\lim _{n \rightarrow \infty}\left|\frac{(-1)^n}{(n+1)(2 n+3)} x^{2 n+2} / \frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n}\right|=x^2
+$$
+当 $\rho=x^2<1$ 即 $|x|<1$ 时, 原级数收绕: 当 $\rho=x^2>1$ 即 $|x|>1$ 时, 原统数发散, 故收敛平 $R=1$.\\
+又 $|x|=1$ 时, $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n}=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n(2 n+1)}$ 收敛, 所以收敛城为 $[-1,1]$.\\
+设和函数为 $s(x)$, 即 $s(x)=\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n}, x \in[-1,1]$.\\
+当 $x=0$ 时, $s(0)=0$, 当 $x \neq 0$ 时, 有
+$$
+\begin{aligned}
+	& s(x)=\frac{1}{x} \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n(2 n+1)} x^{2 n+1}=\frac{1}{x} \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} \int_0^x t^{2 n} \mathrm{~d} t=\frac{1}{x} \int_0^x \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n} t^{2 n} \mathrm{~d} t \\
+	& =\frac{1}{x} \int_0^x \ln \left(1+t^2\right) \mathrm{d} t=\ln \left(1+x^2\right)-2+\frac{2}{x} \arctan x . \\
+	& s(x)= \begin{cases}0, & x=0, \\
+		\ln \left(1+x^2\right)-2+\frac{2}{x} \arctan x, & x \in[-1,0) \cup(0,1] .\end{cases} \\
+	&
+\end{aligned}
+$$\\
+五、证明题（每小题 6 分, 共 24 分)\\
+18. 证明函数项级数 $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{e^x+n}$ 在 $x \in(-\infty,+\infty)$ 上一致收玫.\\
+证: 令 $u_n(x)=(-1)^{n-1}, v_n(x)=\frac{1}{e^x+n}$, 则 $\sum_{n=1}^{\infty} u_n(x)$ 的部分和 $U_n(x)$ 满足
+$\left|U_n(x)\right|=\left|\sum_{k=1}^n u_k(x)\right|=\left|\sum_{k=1}^n(-1)^{n-1}\right| \leq 1$, 在 $x \in(-\infty,+\infty)$ 上一致有界.
+又对任意固定的 $x \in(-\infty,+\infty), v_n(x)$ 关于 $n$ 单调昽, 且
+$$
+v_n(x)=\frac{1}{e^x+n} \rightrightarrows 0(n \rightarrow \infty)
+$$
+故由 Dirichlet 判别法知, 原级数一致收敛.\\
+注: 用余项准则证明也可.\\
+19. 证明: 由 $z=a, z=b, y=f(z)$ ( $f$ 为连续的正值函数) 以及 $z$ 轴所围成的平面图形绕 $z$ 轴旋转一周所成 的立体对 $z$ 轴的转动惯量 (密度为 $\mu=1$ ) 为 $I_z=\frac{\pi}{2} \int_a^b f^4(z) \mathrm{d} z$.\\
+证: 曲线 $y=f(z)(a \leq z \leq b)$ 绕 $z$ 旋转一周所成的曲面方程为 $x^2+y^2=f^2(z)$, 题中的 立体即为该曲面与平面 $z=a, z=b$ 所围的空间区域 (髟转体), 记为 $\Omega$. 其对 $z$ 轴的转 动惯量 (密度为 $\mu=1$ ) 为 $I_z=\iiint_{\Omega}\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y \mathrm{~d} z$.
+(3 分)
+$\forall z \in[a, b]$, 过点 $(0,0, z)$ 作平行于 $x O y$ 面的平面, 它在 $\Omega$ 内的截面为圆
+$$
+D_z: x^2+y^2 \leq f^2(z), z \in[a, b]
+$$
+来用先的后一法计算, 可得
+$$
+\begin{aligned}
+	I_z & =\iiint_{\Omega}\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y \mathrm{~d} z=\int_a^b \mathrm{~d} z \iint_{D_x}\left(x^2+y^2\right) \mathrm{d} x \mathrm{~d} y \\
+	& =\int_a^b \mathrm{~d} z \iint_{D_t} r^2 \cdot r \mathrm{~d} r \mathrm{~d} \theta=\int_a^b \mathrm{~d} z \int_0^{2 \pi} \mathrm{d} \theta \int_0^{f(z)} r^3 \mathrm{~d} r=\frac{\pi}{2} \int_a^b f^4(z) \mathrm{d} z .
+\end{aligned}
+$$
+20. 设 $f(x, y)$ 在 $\mathbf{R}^2-\{(0,0)\}$ 可微, 在 $(0,0)$ 处连续, 且 $\lim _{\substack{x \rightarrow 0 \\ y \rightarrow 0}} \frac{\partial f}{\partial x}=\lim _{\substack{x \rightarrow 0 \\ y \rightarrow 0}} \frac{\partial f}{\partial y}=0$. 证明: $f(x, y)$ 在 $(0,0)$ 处也 可微.\\
+证: 令 $\varphi(t)=f(t \Delta x, t \Delta y),(\Delta x, \Delta y) \neq(0,0)$. 由䐎设条件, $t \neq 0$ 时, $\varphi(t)$ 可导. 且
+$\exists \xi \in(0,1)$, 使得
+$$
+f(\Delta x, \Delta y)-f(0,0)=\varphi(1)-\varphi(0)=\varphi^{\prime}(\xi)=\frac{\partial f(\xi \Delta r, \xi \Delta y)}{\partial x} \Delta x+\frac{\partial f(\xi \Delta x, \xi \Delta y)}{\partial y} \Delta y
+$$
+再由条件得
+$$
+\lim _{\substack{\Delta x \rightarrow 0 \\ \Delta y \rightarrow 0}} \frac{f(\Delta x, \Delta y)-f(0,0)-0 \Delta x-0 \Delta y}{\sqrt{\Delta x^2+\Delta y^2}}=0 .
+$$
+即 $\Delta z=f(\Delta x, \Delta y)-f(0,0)=0 \Delta x+0 \Delta y+o(\rho), \rho=\sqrt{\Delta x^2+\Delta y^2} \rightarrow 0$.
+故 $f(x, y)$ 在 $(0,0)$ 处也可微.
+\\
+21. 设连续函数列 $\left\{f_n(x, y)\right\}$ 在有界闭区域 $D$ 上一致收敛于 $f(x, y)$, 证明:
+$$
+\iint_D f(x, y) \mathrm{d} x \mathrm{~d} y=\lim _{n \rightarrow \infty} \iint_D f_n(x, y) \mathrm{d} x \mathrm{~d} y .
+$$\\
+证: 因 $\left\{f_n(x, y)\right\}$ 在 $D$ 上一致收敛于 $f(x, y)$, 故由定义, 对 $\forall \varepsilon>0, \exists N=N(\varepsilon)>0$, 当 $n>N$ 时, 对一切 $(x, y) \in D$, 有 $\mid f_n(x, y)-f(x, y)<\varepsilon$.
+于是
+$$
+\left|\iint_D f(x, y) \mathrm{d} x \mathrm{~d} y-\iint_D f_n(x, y) \mathrm{d} x \mathrm{~d} y\right| \leq \iiint_D\left|f(x, y)-f_n(x, y)\right| \mathrm{d} x \mathrm{~d} y \leq \varepsilon \iint_D \mathrm{~d} x \mathrm{~d} y \leq \varepsilon S_D,
+$$
+其中 $S_D$ 为存界闭区域 $D$ 的面积. 故
+$$
+\iint_D f(x, y) \mathrm{d} x \mathrm{~d} y=\lim _{n \rightarrow \infty} \iint_D f_n(x, y) \mathrm{d} x \mathrm{~d} y
+$$\\
+\end{document}

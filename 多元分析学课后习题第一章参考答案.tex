@@ -1,0 +1,840 @@
+\documentclass[a4paper,11pt,UTF8]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
+\usepackage{cleveref}
+\usepackage{esint} 
+%opening
+\title{}
+\author{}
+
+\begin{document}
+习题 1.1\\
+(A)\\
+1.1.1. 利用级数收敛的定义判别下列级数的敛散性, 并对收敛级数求其和:\\
+(1) $\displaystyle \displaystyle \displaystyle \sum_{n=0}^{\infty} \frac{3^n+1}{q^n}(|q|>3)$;\\
+(3) $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty}(\sqrt{n+2}-2 \sqrt{n+1}+\sqrt{n})$.\\
+解 (1) $a_n=\left(\frac{3}{q}\right)^n+\left(\frac{1}{q}\right)^n, S_n=\sum_{k=1}^n\left[\left(\frac{3}{q}\right)^k+\left(\frac{1}{q}\right)^k\right]$, 由于 $\displaystyle \displaystyle \displaystyle \sum\left(\frac{3}{q}\right)^n$ 与 $\displaystyle \displaystyle \displaystyle \sum\left(\frac{1}{q}\right)^n$ 均收敛, 所以 $\displaystyle \displaystyle \displaystyle \sum\left[\left(\frac{3}{q}\right)^n+\left(\frac{1}{q}\right)^n\right]$ 收敛,\\$S_n=\sum_{k=1}^n\left[\left(\frac{3}{q}\right)^k+\left(\frac{1}{q}\right)^k\right]=\frac{\frac{3}{q}-\left(\frac{3}{q}\right)^{n+1}}{1-\frac{3}{q}}+$ $\displaystyle \displaystyle \displaystyle \frac{\frac{1}{q}-\left(\frac{1}{q}\right)^{n+1}}{1-\frac{1}{q}}, \lim _{n \rightarrow \infty} S_n=\frac{\frac{3}{q}}{1-\frac{3}{q}}+\frac{\frac{1}{q}}{1-\frac{1}{q}}=\frac{3}{q-3}+\frac{1}{q-1}$, 所以原级数收敛, 且 和 $S=\frac{3}{q-3}+\frac{1}{q-1}$.\\
+(3) $a_n=\sqrt{n+2}-2 \sqrt{n+1}+\sqrt{n}=\sqrt{n+2}-\sqrt{n+1}-(\sqrt{n+1}-\sqrt{n})=$
+ $\displaystyle \displaystyle \displaystyle \frac{1}{\sqrt{n+2}+\sqrt{n+1}}-\frac{1}{\sqrt{n+1}+\sqrt{n}}, \\
+  S_n=\sum_{k=1}^n a_k=\sum_{k=1}^n\left(\frac{1}{\sqrt{k+2}+\sqrt{k+1}}-\right.\left.\frac{1}{\sqrt{k+1}+\sqrt{k}}\right)=-\frac{1}{\sqrt{2}+1}+\frac{1}{\sqrt{n+2}+\sqrt{n+1}}, \\
+\lim _{x \rightarrow+\infty} S_n=-\frac{1}{\sqrt{2}+1}$\\
+   所以, 原级数收敛且和数 $S=-\frac{1}{\sqrt{2}+1}$.\\
+1.1.3. 设级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty}(-1)^{n-1} a_n=2, \sum_{n=1}^{\infty} a_{2 n-1}=5$, 求级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} a_n$ 的和.\\
+解 由 $a_1-a_2+a_3-a_4+\cdots+a_{2 n-1}-a_{2 n}=\left(a_1+a_3+\cdots+a_{2 n-1}\right)-\left(a_2+a_4+\right.$ $\displaystyle \displaystyle \displaystyle \left.\cdots+a_{2 n}\right) \rightarrow 2$ 和 $a_1+a_3+\cdots+a_{2 n-1} \rightarrow 5$, 得到 $a_2+a_4+\cdots+a_{2 n} \rightarrow 5-2=3$. 于 是 $S_{2 n}=a_1+a_2+\cdots+a_{2 n}=\left(a_1+a_3+\cdots+a_{2 n-1}\right)+\left(a_2+a_4+\cdots+a_{2 n}\right) \rightarrow 5+3=8$. 又由 $\displaystyle \displaystyle \displaystyle \sum(-1)^{n-1} a_n$ 收敛得知 $a_n \rightarrow 0$. 从而得到 $S_{2 n+1}=S_{2 n}+a_{2 n+1} \rightarrow 8$. 故, $S_n \rightarrow 8$, 级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} a_n$ 的和为 8 .\\
+1.1.4. 利用级数的性质判别下列级数的敛散性 :\\
+(1) $\displaystyle \displaystyle \displaystyle \sum \frac{\sqrt[n]{n^2+1}}{\left(1+\frac{1}{n}\right)^n}$\\
+(4) $\displaystyle \displaystyle \displaystyle \sum\left(\frac{1}{n}-\frac{1}{2^n}\right)$;\\
+(5) $\displaystyle \displaystyle \displaystyle \sum n^2 \ln \left(1+\frac{x}{n^2}\right)(x \in \mathbf{R})$.\\
+解 (1) 由于 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\sqrt[n]{n^2+1}}{\left(1+\frac{1}{n}\right)^n}=\frac{1}{e} \neq 0$, 故该级数发散.\\
+(4) 由于 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n}$ 发散, $\displaystyle \displaystyle \displaystyle \sum \frac{1}{2^n}$ 收敛, 由级数的线性运算知,\\$\displaystyle \displaystyle \displaystyle \sum\left(\frac{1}{n}-\frac{1}{2^n}\right)$ 发散.\\
+(5) 当 $x \neq 0$ 时, 因为 $a_n=n^2 \ln \left(1+\frac{x}{n^2}\right)=\ln \left(1+\frac{x}{n^2}\right)^{\frac{n^2}{x} x}$, 所以 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} a_n=$ $x \ln e=x \neq 0$, 级数发散; 当 $x=0$ 时, $\displaystyle \displaystyle \displaystyle \sum n^2 \ln \left(1+\frac{x}{n^2}\right)$ 的每一项都是零, 从而收 敛于 0 .\\
+1.1.5. 下列命题是否正确? 若正确, 给出证明; 若不正确, 举出反例.\\
+(1) 若 $a_n \leq b_n$, 且 $\displaystyle \displaystyle \displaystyle \sum b_n$ 收敛, 则 $\displaystyle \displaystyle \displaystyle \sum a_n$ 必收敛;\\
+(3) 若 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛, 且 $a_n>0$, 则 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_{n+1}}{a_n}=r<1$;\\
+(5) 若 $\displaystyle \displaystyle \displaystyle \sum a_n$ 发散, 则 $\displaystyle \displaystyle \displaystyle \sum a_n^2$ 必发散.\\
+解 (1) 不正确. 若 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{2^n}$ 收敛, $-1<\frac{1}{2^n}$, 但 $\displaystyle \displaystyle \displaystyle \sum(-1)$ 发散.\\
+(3) 不正确. 如: $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^2}$ 收敛, 且 $a_n=\frac{1}{n^2}$, 但 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_{n+1}}{a_n}=\lim _{n \rightarrow \infty} \frac{n^2}{(n+1)^2}=1$.\\
+(5) 不正确. 如: $a_n=\frac{1}{n}, \sum \frac{1}{n}$ 发散, 但 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^2}$ 收敛.\\
+1.1.6. 判别下列正项级数的敛散性 (其中参数 $\displaystyle \displaystyle \displaystyle \alpha>0$ ):\\
+(2) $\displaystyle \displaystyle \displaystyle \sum \frac{n^{n+1}}{(n+1)^{n+2}}$;\\
+(4) $\displaystyle \displaystyle \displaystyle \sum \frac{\sqrt{n}}{n^2-\ln n}$;\\
+(6) $\displaystyle \displaystyle \displaystyle \sum \frac{n^3\left[\sqrt{2}+(-1)^n\right]^n}{3^n}$\\
+(8) $\displaystyle \displaystyle \displaystyle \sum\left(1-\cos \frac{\pi}{n}\right)$;\\
+(10) $\displaystyle \displaystyle \displaystyle \sum n \sin \frac{\pi}{3^n}$\\
+(12) $\displaystyle \displaystyle \displaystyle \sum n !\left(\frac{\alpha}{n}\right)^n$\\
+(14) $\displaystyle \displaystyle \displaystyle \sum \frac{1}{\ln (n !)}$\\
+解 (2) 因为 $a_n=\frac{n^{n+1}}{(n+1)^{n+2}}=\frac{n}{\left(1+\frac{1}{n}\right)^n(n+1)^2}$, 所以 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_n}{\frac{1}{n}}=\frac{1}{e}$, 由 于 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n}$ 发散, 依比较准则, 原级数发散.\\
+(4) 因为 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\ln n}{n^{3 / 2}}=0$, 所以 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\sqrt{n}}{n^2-\ln n} / \frac{1}{n^{3 / 2}}=1$, 而 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^{3 / 2}}$ 收敛, 由比较准则, 原级数收敛.\\
+(6) 因为 $0<a_n=\frac{n^3\left[\sqrt{2}+(-1)^n\right]^n}{3^n} \leq \frac{n^3(\sqrt{2}+1)^n}{3^n}:=b_n$, 而 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{b_n}=$ $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{n^3} \cdot \frac{\sqrt{2}+1}{3}=\frac{\sqrt{2}+1}{3}<1, \sum b_n$ 收敛, 故由比较判别法知原级数收敛.\\
+思考 若式中的 $3^n$ 换为 $2^n$, 敛散性又如何呢?\\
+(8) 因为 $1-\cos \frac{\pi}{n} \sim \frac{\pi^2}{2 n^2}$, 而 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^2}$ 收敛, 所以原级数收敛.
+(10) $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{n \sin \frac{\pi}{3^n}}{\left(\frac{2}{3}\right)^n}=0$, 由于 $\displaystyle \displaystyle \displaystyle \sum\left(\frac{2}{3}\right)^n$ 收敛, 所以级数为收敛的.\\
+另解: $n \sin \frac{\pi}{3^n} \sim \frac{n \pi}{3^n}, \lim _{n \rightarrow \infty} \sqrt[n]{\frac{n \pi}{3^n}}=\frac{1}{3}<1$, 所以 $\displaystyle \displaystyle \displaystyle \sum \frac{n \pi}{3^n}$ 收敛, 从而原级数收 敛.\\
+(12) 因为 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_{n+1}}{a_n}=\lim _{n \rightarrow \infty} \alpha\left(\frac{n}{n+1}\right)^n=\frac{\alpha}{e}:=r$, 所以, 当 $\displaystyle \displaystyle \displaystyle \alpha>e$ 时, 原级数发散. 当 $\displaystyle \displaystyle \displaystyle \alpha<e$ 时, $r<1$, 原级数收敛. 当 $\displaystyle \displaystyle \displaystyle \alpha=e$ 时, 对 $a_n=n !(e / n)^n$ 用Raabe判别法: 因为
+$$
+\lim _{n \rightarrow \infty} n\left(\frac{a_n}{a_{n+1}-1}\right)=n\left(e^{-1}\left(1+\frac{1}{n}\right)^n-1\right)=-\frac{1}{2}<0,
+$$
+所以原级数发散.\\
+(14) 因为 $n !<n^n$, 所以 $\displaystyle \displaystyle \displaystyle \frac{1}{\ln n !}>\frac{1}{n \ln n}$. 由积分判别法知 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n \ln n}$ 发散, 故 原级数发散.\\
+1.1.9. 讨论下列级数的敛散性, 并对收敛级数说明是绝对收敛或条件收敛:\\
+(1) $\displaystyle \displaystyle \displaystyle \sum(-1)^n \frac{(2 n-1) ! !}{3^n \cdot n !}$\\
+(3) $\displaystyle \displaystyle \displaystyle \sum(-1)^{n-1} \frac{1}{n-\ln n}$;\\
+(5) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^{n-1}}{n(\sqrt{n}+1)}$\\
+解 (1) $a_n=\frac{(2 n-1) ! !}{3^n n !}$, 由达朗贝尔比值判别法, 得 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_{n+1}}{a_n}=\frac{2}{3}<1$, 所以级数绝对收敛.\\
+(3) 原级数是交错级数. 因为 $\displaystyle \displaystyle \displaystyle \frac{1}{n-\ln n} \sim \frac{1}{n}, \sum \frac{1}{n}$ 发散, 所以原级数不绝 对收敛, 又 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} a_n=\lim _{n \rightarrow \infty} \frac{1}{n-\ln n}=\lim _{n \rightarrow \infty} \frac{\frac{1}{n}}{1-\frac{\ln n}{n}}=0$, 故再设 $\displaystyle f(x)=x-\ln x$, 由 $\displaystyle f^{\prime}(x)=1-\frac{1}{x}>0(x>1)$, 知 $\displaystyle \displaystyle \displaystyle \{n-\ln n\}$ 单调增, 即 $\displaystyle \displaystyle \displaystyle \left\{\frac{1}{n-\ln n}\right\}$ 单调减, 于 是, 依莱布尼茨准则, 原级数条件收敛.\\
+(5) 因为 $\displaystyle \displaystyle \displaystyle \left|\frac{(-1)^{n-1}}{n(\sqrt{n}+1)}\right|=\frac{1}{n(\sqrt{n}+1)} \sim \frac{1}{n^{3 / 2}}, \sum \frac{1}{n^{3 / 2}}$ 收敛, 所以原级数绝对 收敛.\\
+1.1.10. 下列级数是否是交错级数? 是否是 Leibniz 级数? 是否收敛?\\
+(1) $\displaystyle \displaystyle \displaystyle \sum\left(\frac{1}{\sqrt{n}-1}-\frac{1}{\sqrt{n}+1}\right)$;\\
+(2) $\displaystyle \displaystyle \displaystyle \sum\left[1+(-1)^n\right] \frac{1}{n} \sin \frac{1}{n}$;\\
+解 (1) 级数 $\displaystyle \displaystyle \displaystyle \sum\left(\frac{1}{\sqrt{n}-1}-\frac{1}{\sqrt{n}+1}\right)=\sum \frac{2}{n-1}$, 不是交错级数, 且级数 发散.\\
+(2) 原级数不是交错级数, 是正项级数. 因为 $\displaystyle \displaystyle \displaystyle \lim _{x \rightarrow \infty} \frac{\frac{\sin \frac{1}{n}}{n}}{\frac{1}{n^2}}=1$, 所以, 级数 与 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^2}$ 有相同的敛散性, 即原级数收敛.\\
+1.1.11. 判别下列级数的敛散性:\\
+(1) $\displaystyle \displaystyle \displaystyle \sum \frac{a^n}{n^p}(p>0,|a| \neq 1)$;\\
+(2) $a-\frac{b}{2}+\frac{a}{3}-\frac{b}{4}+\cdots+\frac{a}{2 n-1}-\frac{b}{2 n}+\cdots\left(a^2+b^2 \neq 0\right)$.\\
+解 (1) 当 $|a|<1$ 时, 因为 $\displaystyle \displaystyle \displaystyle \lim _{x \rightarrow \infty}\left|\frac{a_{n+1}}{a_n}\right|=|a|<1$, 依达朗贝尔准则, $\displaystyle \displaystyle \displaystyle \sum \frac{a^n}{n^p}$ 绝 对收敛. 当 $|a|>1$ 时, 因为 $\displaystyle \displaystyle \displaystyle \lim _{x \rightarrow \infty}\left|\frac{a_{n+1}}{a_n}\right|=|a|>1 \Rightarrow\left|a_n\right|>\left|a_N\right|>0(n \geq N)$, 其中 $N$ 为某正整数, 于是 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} a_n \neq 0, \sum \frac{a^n}{n^p}$ 发散.\\
+(2) 当 $a=b$ 时, 级数可化为 $a-\frac{b}{2}+\frac{a}{3}-\frac{b}{4}+\cdots+\frac{a}{2 n-1}-\frac{b}{2 n}+\cdots=$ $a \sum(-1)^{n-1} \frac{1}{n}$, 由于 $\displaystyle \displaystyle \displaystyle \sum(-1)^{n-1} \frac{1}{n}$ 收敛, 故 $a=b$ 时, 级数条件收敛.\\
+当 $a \neq b$ 时, 由
+$$
+1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}=\ln n+\gamma+o(1)
+$$
+Euler 常数 $\displaystyle \displaystyle \displaystyle \gamma \approx 0.577$, 得到
+$$
+\begin{aligned}
+	1+\frac{1}{3}+\frac{1}{5}+\cdots+\frac{1}{2 n-1} & =1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{2 n}-\left(\frac{1}{2}+\frac{1}{4}+\cdots+\frac{1}{2 n}\right) \\
+	& =\ln 2 n+\gamma+o(1)-\frac{1}{2}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}\right) \\
+	& =\ln 2+\frac{1}{2} \ln n+\frac{\gamma}{2}+o(1) .
+\end{aligned}
+$$
+于是, 对级数的部分和数列 $\displaystyle \displaystyle \displaystyle \left\{S_n\right\}$, 有
+$$
+\begin{aligned}
+	S_{2 n}&=a-\frac{b}{2}+\frac{a}{3}-\frac{b}{4}+\cdots+\frac{a}{2 n-1}-\frac{b}{2 n}
+	& =a\left(1+\frac{1}{3}+\frac{1}{5}+\cdots+\frac{1}{2 n-1}\right)-b\left(\frac{1}{2}+\frac{1}{4}+\cdots+\frac{1}{2 n}\right) \\
+	& =a \ln 2+\frac{a-b}{2} \ln n+\frac{(a-b) \gamma}{2}+o(1)
+\end{aligned}
+$$
+因此, 当 $a \neq b$ 时, $\displaystyle \displaystyle \displaystyle \left\{S_{2 n}\right\}$ 发散, 从而原级数发散.\\
+1.1.16. 设 $a_n>0, b_n>0, \frac{a_{n+1}}{a_n} \leq \frac{b_{n+1}}{b_n}$. 若 $\displaystyle \displaystyle \displaystyle \sum b_n$ 收敛, 证明 $\displaystyle \displaystyle \displaystyle \sum a_n$ 也收敛.\\
+证 $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{a_n} \leq \frac{b_{n+1}}{b_n} \Rightarrow \frac{a_{n+1}}{b_{n+1}} \leq \frac{a_n}{b_n}$, 这表明 $\displaystyle \displaystyle \displaystyle \left\{\frac{a_n}{b_n}\right\}$ 单减. 因此 $\displaystyle \displaystyle \displaystyle \frac{a_n}{b_n} \leq \frac{a_1}{b_1}$, 即 $a_n \leq \frac{a_1}{b_1} b_n$. 由比较判别法, 若 $\displaystyle \displaystyle \displaystyle \sum b_n$ 收敛, 则 $\displaystyle \displaystyle \displaystyle \sum a_n$ 也收敛.
+1.1.17. 设 $a_n>0, n$ 充分大. 证明:\\
+(1) 若 $n$ 充分大时, $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{a_n} \leq r<1$ (或 $\displaystyle \displaystyle \displaystyle \sqrt[n]{a_n} \leq r<1$ ), 则 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛.\\
+(2) 若 $n$ 充分大时, $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{a_n}>1\left(\right.$ 或 $\displaystyle \displaystyle \displaystyle \left.\sqrt[n]{a_n}>1\right)$, 则 $\displaystyle \displaystyle \displaystyle \sum a_n$ 发散.\\
+证 (1) 不妨设 $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{a_n} \leq r<1$, 对一切 $n \geq 1$ 成立. 于是有 $\displaystyle \displaystyle \displaystyle \frac{a_2}{a_1} \leq r, \frac{a_3}{a_2} \leq$ $r, \cdots \frac{a_n}{a_{n-1}} \leq r$. 把前个 $n$ 不等式按项相乘后, 得 $\displaystyle \displaystyle \displaystyle \frac{a_2 a_3 \cdots a_n}{a_1 a_2 \cdots a_{n-1}} \leq r^{n-1}$, 即 $a_n \leq$ $a_1 r^{n-1}$. 由于当 $0<r<1$ 时, 等比级数 $\displaystyle \displaystyle \displaystyle \sum q^{n-1}$ 收敛, 根据比较原理可推 得 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛.\\
+（2）因为当 $n>N_0$ 时, $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{a_n}>1$, 则 $a_{n+1}>a_n>a_{N_0}$. 于是当 $n \rightarrow \infty$ 时, $a_n$ 的极限不可能为零, 故 $\displaystyle \displaystyle \displaystyle \sum^2 a_n$ 发散.\\
+1.1.19. 设正项级数 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛, 且 $\displaystyle \displaystyle \displaystyle \left\{a_n\right\}$ 单调减, 证明: (1) $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} n a_n=0$ (提示: 利用级数的Cauchy 收敛准则). (2) 级数 $\displaystyle \displaystyle \displaystyle \sum n\left(a_n-a_{n-1}\right)$ 收敛.\\
+证 (1) 因 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛, 所以 $a_n \rightarrow 0(n \rightarrow \infty)$, 且由Cauchy收敛准则可 知 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty}\left(a_n+a_{n+1}+\cdots+a_{2 n}\right)=0$. 但 $a_n+a_{n+1}+\cdots+a_{2 n} \geq n a_{2 n}$, 故当 $n \rightarrow$ $\displaystyle \displaystyle \displaystyle \infty$ 时 $2 n a_{2 n} \rightarrow 0$, 从而 $n a_{n+1} \rightarrow 0,(2 n+1) a_{2 n+1} \rightarrow 0$, 因此 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} n a_n=0$.\\
+(2) 令 $S_k=\sum_{n=1}^k n\left(a_n-a_{n+1}\right)$, 则
+$$
+S_k=\sum_{n=1}^k a_n-k a_{k+1}
+$$\\
+因此由 $n a_{n+1} \rightarrow 0(n \rightarrow \infty)$ 得到 $\displaystyle \displaystyle \displaystyle \lim _{k \rightarrow \infty} S_k=\sum_{n=1}^{\infty} a_n$, 即级数 $\displaystyle \displaystyle \displaystyle \sum n\left(a_n-a_{n+1}\right)$ 收敛.\\
+注 著名的Abel求和公式(直接验证即可):\\
+$$
+\sum_{k=1}^n a_k b_k=a_n B_n+\sum_{k=1}^{n-1}\left(a_k-a_{k+1}\right) B_k,
+$$
+其中 $\displaystyle \displaystyle \displaystyle B_k=\sum_{j=1}^k b_j$.\\
+下面题1.1.20-1.1.23来自文献:\\
+黄永忠, 韩志斌, 吴洁. 通项等价的两个数列级数的收敛性. 大学数学, $2018,34(6): 61-66$.\\
+1.1.20. 设单调有界数列 $\displaystyle \displaystyle \displaystyle \left\{a_n\right\}$ 满足 $a_n \geq c>0, c$ 为常数. 又设 $u_n=a_n v_n$ $\displaystyle \displaystyle \displaystyle \left(n \in \mathbf{N}_{+}\right)$. 试证:\\
+(1) 若 $\displaystyle \displaystyle \displaystyle \sum v_n$ 条件收敛, 则 $\displaystyle \displaystyle \displaystyle \sum u_n$ 条件收敛;\\
+(2) 若 $\displaystyle \displaystyle \displaystyle \sum v_n$ 发散, 则 $\displaystyle \displaystyle \displaystyle \sum u_n$ 发散.\\
+证 (1) 设 $\displaystyle \displaystyle \displaystyle \sum v_n$ 条件收敛. 由已知, 有 $\displaystyle \displaystyle \displaystyle \left|u_n\right| \geq c\left|v_n\right|$. 因为 $\displaystyle \displaystyle \displaystyle \sum\left|v_n\right|$ 发散, 所 以 $\displaystyle \displaystyle \displaystyle \sum\left|u_n\right|$ 发散. 由 $\displaystyle \displaystyle \displaystyle \mathrm{Abel}$ 判别法知 $\displaystyle \displaystyle \displaystyle \sum u_n$ 收敛, 从而条件收敛.\\
+(2) 现在设 $\displaystyle \displaystyle \displaystyle \sum v_n$ 发散. 已知数列 $\displaystyle \displaystyle \displaystyle \left\{\frac{1}{a_n}\right\}$ 单调有界, 且 $v_n=u_n \cdot \frac{1}{a_n}$. 若 $\displaystyle \displaystyle \displaystyle \sum u_n$ 收 敛, 则由 $\displaystyle \displaystyle \displaystyle \mathrm{Abel}$ 判别法知 $\displaystyle \displaystyle \displaystyle \sum v_n$ 收敛, 矛盾. 故 $\displaystyle \displaystyle \displaystyle \sum u_n$ 发散.\\
+1.1.21. 利用 1.1.20题的结论考虑下列式子的绝对收敛级数或条件收敛性(其 中 $p$ 为正常数):\\
+(1) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{\sqrt{n}} \cos \frac{\pi}{n}$\\
+(2) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n \arctan n}{n^p(1+\arctan n)}$\\
+(3) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n(n+1)}{n^p\left(2+\sqrt{n^2+1}\right)}$.\\
+解 (1) 对 $n \geq 3$ 成立 $\displaystyle \displaystyle \displaystyle \frac{1}{2} \leq a_n=\cos \frac{\pi}{n}<1,\left\{a_n\right\}$ 单调. 又 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{\sqrt{n}}$ 条件收敛, 所以原级数条件收敛.\\
+(2) 因为 $a_n=\frac{\arctan n}{1+\arctan n}$ 单增, 满足 $\displaystyle \displaystyle \displaystyle \frac{\pi}{4+\pi} \leq a_n<\frac{\pi}{2+\pi}$, 所以级数 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n \arctan n}{n^p(1+\arctan n)}$ 与 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{n^p}$ 有相同的敛散性, 即当 $0<p \leq 1$ 时条件收敛, 当 $p>1$ 时绝对收敛.\\
+(3) 因为
+$$
+\sum \frac{n+1}{n^p\left(2+\sqrt{n^2+1}\right)}=\frac{1}{n^p} \cdot \frac{n}{2+\sqrt{n^2+1}}+\frac{1}{n^p} \cdot \frac{1}{2+\sqrt{n^2+1}},
+$$
+而数列 $\displaystyle \displaystyle \displaystyle \left\{\frac{n}{2+\sqrt{n^2+1}}\right\}$ 与 $\displaystyle \displaystyle \displaystyle \left\{\frac{1}{2+\sqrt{n^2+1}}\right\}$ 均单调有界, 级数 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{n^p}$ 收敛, 所以 由Abel判别法知原级数收敛, 且当 $p>1$ 时绝对收敛, 当 $0<p \leq 1$ 时条件收敛.\\
+1.1.22. 设 $a_n, b_n$ 满足 $a_n \sim b_n$ 且 $a_n-b_n \sim \frac{C}{n^\beta}(n \rightarrow \infty)$, 其中常数 $C \neq 0$, $\displaystyle \displaystyle \displaystyle \beta>1$. 证明级数 $\displaystyle \displaystyle \displaystyle \sum a_n$ 与 $\displaystyle \displaystyle \displaystyle \sum b_n$ 有相同的敛散性.\\
+证 已知 $a_n-b_n \sim \frac{C}{n^\beta}$ 且 $\displaystyle \displaystyle \displaystyle \beta>1$ 表明级数 $\displaystyle \displaystyle \displaystyle \sum\left(a_n-b_n\right)$ 绝对收敛,从而收敛. 最 后由级数收敛的线性运算性质得到结论.\\
+注 题中条件 $a_n \sim b_n$ 是不需要的, 但很多题需要从等价关系去考虑, 比如下 题.\\
+此外, 若 $\displaystyle \displaystyle \displaystyle \sum(-1)^n a_n$ 与 $\displaystyle \displaystyle \displaystyle \sum(-1)^n b_n$ 均为交错级数, 则在该题条件下, 这两个交 错级数同敛散性.\\
+1.1.23. 判定下列级数的敛散性(其中常数 $p>0$ ):\\
+(1) $\displaystyle \displaystyle \displaystyle \sum \ln \left(1+\frac{(-1)^{n-1}}{n^p}\right)$;
+(2) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n \sqrt{n}}{n+(-1)^n b}(b \neq 0)$;\\
+(3) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{\left[n+(-1)^n\right]^p}$
+(4) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n n}{(n+1) \sqrt{n+2}} \tan \frac{1}{\sqrt{n}}$\\
+(5) $\displaystyle \displaystyle \displaystyle \sum(-1)^n \frac{\sqrt[3]{n}}{2+\sqrt{n}}$
+(6) $\displaystyle \displaystyle \displaystyle \sum \frac{\sin n}{\sqrt{n}+\sin n}$;\\
+(7) $\displaystyle \displaystyle \displaystyle \sum\left(e^{\frac{\cos n}{\sqrt{n}}}-\cos \frac{1}{n}\right)$;
+(8) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{\left[\sqrt{n}+(-1)^n\right]^p}$.\\
+解 (1) 利用Taylor公式, 有
+$$
+a_n=\ln \left(1+\frac{(-1)^{n-1}}{n^p}\right)=\frac{(-1)^{n-1}}{n^p}-\frac{1}{2 n^{2 p}}+o (\frac{1}{n^{2 p})} .
+$$
+于是
+$$
+a_n \sim \frac{(-1)^{n-1}}{n^p}, \quad a_n-\frac{(-1)^{n-1}}{n^p} \sim-\frac{1}{n^{2 p}}:=c_n .
+$$
+当 $p>\frac{1}{2}$ 时, 由 $\displaystyle \displaystyle \displaystyle \sum c_n$ 收敛及 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^{n-1}}{n^p}$ 收敛, 得到原级数 $\displaystyle \displaystyle \displaystyle \sum \ln \left(1+\frac{(-1)^{n-1}}{n^p}\right)$ 收 敛, 并且当 $\displaystyle \displaystyle \displaystyle \frac{1}{2}<p \leq 1$ 时条件收敛, 当 $p>1$ 时绝对收敛.\\
+当 $0<p \leq \frac{1}{2}$ 时, 注意到 $\displaystyle \displaystyle \displaystyle \sum c_n$ 是发散的不变号级数,\\
+ 从而由式 $\displaystyle \displaystyle \displaystyle \left(^*\right)$ 知 $\displaystyle \displaystyle \displaystyle \sum\left(a_n-\right.$ $\displaystyle \displaystyle \displaystyle \left.\frac{(-1)^{n-1}}{n^p}\right)$ 发散. 再由 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^{n-1}}{n^p}$ 收敛, 得原级数发散.\\
+(2) 因为
+$$
+\frac{\sqrt{n}}{n+(-1)^n b}=\frac{1}{\sqrt{n}} \cdot \frac{1}{1+\frac{(-1)^n b}{n}}=\frac{1}{\sqrt{n}} \cdot\left(1-\frac{(-1)^n b}{n}+o\left(\frac{(-1)^n b}{n}\right)\right),
+$$
+所以
+$$
+\frac{\sqrt{n}}{n+(-1)^n b}-\frac{1}{\sqrt{n}} \sim \frac{(-1)^n b}{n \sqrt{n}}
+$$
+而 $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n b}{n \sqrt{n}}$ 绝对收敛, $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{\sqrt{n}}$ 收敛, 因此原级数收敛. 又 $\displaystyle \displaystyle \displaystyle \frac{\sqrt{n}}{n+(-1)^n b} \sim \frac{1}{\sqrt{n}}$, 故原级数条件收敛.\\
+注 $\displaystyle \displaystyle \displaystyle \left\{\frac{\sqrt{n}}{n+(-1)^n b}\right\}$ 不单调, Leibniz判别法不能使用.\\
+余下 6 个小题的解答请参看1.1.20前提供的文献.\\
+(B)\\
+1.1.1. 讨论下列级数的敛散性:\\
+(1) $1+\frac{1}{2} \cdot \frac{19}{7}+\frac{2 !}{3^2} \cdot\left(\frac{19}{7}\right)^2+\frac{3 !}{4^3} \cdot\left(\frac{19}{7}\right)^3+\frac{4 !}{5^4} \cdot\left(\frac{19}{7}\right)^4+\cdots$;\\
+(2) $\displaystyle \displaystyle \displaystyle \frac{1}{3}+\frac{1}{3 \sqrt{3}}+\frac{1}{3 \sqrt{3} \sqrt[3]{3}}+\cdots+\frac{1}{3 \sqrt{3} \sqrt[3]{3} \cdots \sqrt[n]{3}}+\cdots$.\\
+解 (1) 设 $a_n=\frac{(n-1) !}{n^{n-1}}\left(\frac{19}{7}\right)^{n-1}$, 并记 $a=19 / 7$, 则
+$$
+\frac{a_{n+1}}{a_n}=a \frac{n^n}{(n+1)^n} \rightarrow \frac{a}{e}<1(n \rightarrow \infty) .
+$$
+故原级数收敛.\\
+(2)收敛.\\
+1.1.3. 求下列级数的和:\\
+(1) $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \arctan \frac{1}{2 n^2}$;\\
+(2) $\displaystyle \displaystyle \displaystyle \sum_{n=0}^{\infty} \frac{2^n}{1+a^{2^n}}(a>1)$\\
+解 (1) 由公式 $\displaystyle \displaystyle \displaystyle \arctan x-\arctan y=\arctan \frac{x-y}{1+x y}$ 可知
+$$
+\arctan \frac{1}{2 n-1}-\arctan \frac{1}{2 n+1}=\arctan \frac{1}{2 n^2}
+$$
+于是, 级数的部分和有
+$$
+S_n=\arctan 1-\arctan \frac{1}{2 n+1}
+$$
+令 $n \rightarrow \infty$, 得 $\displaystyle \displaystyle \displaystyle \sum \arctan \frac{1}{2 n^2}=\frac{\pi}{4}$.\\
+(2) 因为
+$$
+\frac{2^n}{1+a^{2^n}}=\frac{2^n\left(a^{2^n}-1\right)}{a^{2^{n+1}}-1}=\frac{2^n\left(a^{2^n}+1\right)}{a^{2^{n+1}}-1}-\frac{2^{n+1}}{a^{2^{n+1}}-1}=\frac{2^n}{a^{2^n}-1}-\frac{2^{n+1}}{a^{2^{n+1}}-1},
+$$
+所以, 部分和
+$$
+S_n=\sum_{k=0}^{n-1} \frac{2^n}{1+a^{2^n}}=\frac{1}{a-1}-\frac{2^n}{a^{2^n}-1}
+$$
+故, $\displaystyle \displaystyle \displaystyle \sum_{n=0}^{\infty} \frac{2^n}{1+a^{2^n}}=\frac{1}{a-1}$.\\
+1.1.9. 令 $\displaystyle \displaystyle \displaystyle H_n=\sum_{k=1}^n \frac{1}{k}\left(n \in \mathbf{N}_{+}\right)$, 求 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{H_n}{n(n+1)}$ 的值.\\
+解 对正整数 $m$, 注意到 $H_m=b_m+\ln m$, 其中 $b_m \rightarrow \gamma(m \rightarrow \infty), \gamma \approx 0.577$,
+Euler常数, 我们有
+$$
+\begin{aligned}
+	\sum_{n=1}^m \frac{H_n}{n(n+1)} & =\sum_{n=1}^m \frac{H_n}{n}-\sum_{n=2}^{m+1} \frac{H_{n-1}}{n} \\
+	& =H_1+\sum_{n=2}^m \frac{H_n-H_{n-1}}{n}-\frac{H_m}{m+1} \\
+	& =\sum_{n=1}^m \frac{1}{n^2}-\frac{H_m}{m+1} \\
+	& =\sum_{n=1}^m \frac{1}{n^2}-\frac{\ln m}{m+1}-\frac{b_m}{m+1} \\
+	& \rightarrow \sum_{n=1}^{\infty} \frac{1}{n^2}-0-0 \quad(m \rightarrow \infty)
+	& =\frac{\pi^2}{6}
+\end{aligned}
+$$
+其中用到 $\displaystyle \displaystyle \displaystyle \lim _{m \rightarrow \infty} \frac{\ln m}{m+1}=0$ 及 $\displaystyle \displaystyle \displaystyle \lim _{m \rightarrow \infty} \frac{b_m}{m+1}=0$.\\
+1.1.10. 令 $\displaystyle \displaystyle \displaystyle a_n=\frac{1}{4 n+1}+\frac{1}{4 n+3}-\frac{1}{2 n+2}, n=0,1,2, \cdots$. 问: 级数 $\displaystyle \displaystyle \displaystyle \sum_{n=0}^{\infty} a_n$ 收 敛吗? 若收敛, 其和是什么?\\
+解 令 $S_k=\sum_{n=0}^k a_n, k=0,1,2, \cdots$, 则
+$$
+\begin{aligned}
+	S_k & =\sum_{n=0}^k\left\{\left(\frac{1}{4 n+1}-\frac{1}{4 n+2}+\frac{1}{4 n+3}-\frac{1}{4 n+4}\right)+\left(\frac{1}{4 n+2}-\frac{1}{4 n+4}\right)\right\} \\
+	& =\sum_{m=1}^{4 k+4} \frac{(-1)^{m-1}}{m}+\frac{1}{2} \sum_{m=1}^{2 k+2} \frac{(-1)^{m-1}}{m}
+\end{aligned}
+$$
+令 $k \rightarrow \infty$, 得到
+$$
+\lim _{k \rightarrow \infty} S_k=\sum_{m=1}^{\infty} \frac{(-1)^{m-1}}{m}+\frac{1}{2} \sum_{k=1}^{\infty} \frac{(-1)^{m-1}}{m}=\frac{3}{2} \ln 2 .
+$$
+所以 $\displaystyle \displaystyle \displaystyle \sum_{n=0}^{\infty} a_n$ 收敛, 其和为 $\displaystyle \displaystyle \displaystyle \frac{3}{2} \ln 2$.\\
+1.1.11. 设级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} a_n$ 条件收敛, $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} a_{k(n)}$ 是它的一个重排级数. 试证: 若存在 正整数 $C$, 使得对每个正整数 $n$ 都有 $|k(n)-n| \leq C$ 成立, 则重排级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} a_{k(n)}$ 收 敛, 且其和不变.\\
+证 设 $S_n=a_1+a_2+\cdots+a_n$ 和 $T_n=a_{k(1)}+a_{k(2)}+\cdots+a_{k(n)}$ 依次为原级数 和重排级数的部分和, 则 $T_n$ 由 $S_n$ 的项组成, 可能有 $2 C$ 项不同: $S_n$ 的最后 $C$ 项的 一些可以由重排向前移动, 并从 $T_n$ 中排除, 在这种情况下, 它们最多有 $C$ 项被 替换为 $a_{n_1}, \cdots, a_{n_C}, n<n_1<\cdots<n_C$, 向后移动. 于是
+$$
+\left|T_n-S_n\right| \leq\left|a_{n-C+1}\right|+\cdots+\left|a_n\right|+\left|a_{n_1}\right|+\cdots+\left|a_{n_C}\right|
+$$
+由 $\displaystyle \displaystyle \displaystyle \sum a_n$ 收敛知, $\displaystyle \displaystyle \displaystyle \forall \varepsilon>0, \exists N(\varepsilon)>0$, 当 $k>N(\varepsilon)$ 时有 $\displaystyle \displaystyle \displaystyle \left|a_k\right|<\varepsilon /(2 C)$. 因此, 对 $n>N(\varepsilon)+C$, 有 $\displaystyle \displaystyle \displaystyle \left|T_n-S_n\right|<\varepsilon$.
+敛, 其中整数 $p \geq 2$.\\
+证 因为 $\displaystyle \displaystyle \displaystyle \left(u_k+v_k\right)^2+\left(u_k-v_k\right)^2=2 u_k^2+2 v_k^2$, 所以, 对任何整数 $n$, 有
+$$
+\sum_{k=1}^n\left(u_k-v_k\right)^2 \leq 2 \sum_{k=1}^n u_k^2+2 \sum_{k=1}^n v_k^2 \leq 2 A+2 B
+$$
+因此, $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty}\left(u_k-v_k\right)^2$ 收敛. 于是, 当 $k$ 充分大时, 成立 $\displaystyle \displaystyle \displaystyle \left(u_k-v_k\right)^2<1$, 从而有 $\displaystyle \displaystyle \displaystyle \mid u_k-$ $\displaystyle \displaystyle \displaystyle \left.v_k\right|^p \leq\left(u_k-v_k\right)^2$ 对 $p \geq 2$ 及充分大的 $k$ 成立. 故级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty}\left(u_k-v_k\right)^p$ 绝对收敛, 从而 收敛.\\
+1.1.14. 讨论级数 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^\alpha}$ 与 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^\beta}$ 的Cauchy乘积级数的敛散性, 其中 $\displaystyle \displaystyle \displaystyle \alpha$ 与 $\displaystyle \displaystyle \displaystyle \beta$ 均为正常数.\\
+解 由注 $1.1 .5(2)$ (1)知, 若 $\displaystyle \displaystyle \displaystyle \alpha $、$ \beta$ 中有一个大于 1 , 则它们的乘积级数收敛.\\
+若 $\displaystyle \displaystyle \displaystyle \alpha $、$\displaystyle \displaystyle \beta$ 均大于 1 , 则乘积级数绝对收敛.\\
+若 $\displaystyle \displaystyle \displaystyle \alpha$、$\displaystyle \displaystyle \displaystyle \beta$ 中仅一个大于 1 , 则乘积级数条件收敛. 事实上, 不妨设 $\displaystyle \displaystyle \displaystyle \alpha>1$, $0<\beta \leq 1$, 则由
+$$
+w_n=\sum_{k=1}^n \frac{1}{k^\alpha(n-k+1)^\beta}=\frac{1}{n^\beta}+\frac{1}{2^\alpha(n-1)^\beta}+\frac{1}{3^\alpha(n-2)^\beta}+\cdots+\frac{1}{n^\alpha}>\frac{1}{n^\beta}
+$$
+知正项级数 $\displaystyle \displaystyle \displaystyle \sum w_n$ 发散, 从而得到乘积级数 $\displaystyle \displaystyle \displaystyle \sum(-1)^{n-1} w_n$ 条件收敛.\\
+ 下面设 $0<$ $\displaystyle \displaystyle \displaystyle \alpha \leq 1,0<\beta \leq 1$. 由Stolz定理得到
+$$
+U_n v_n=\left(1+\frac{1}{2^\alpha}+\cdots+\frac{1}{n^\alpha}\right) \cdot \frac{1}{n^\beta} \sim \frac{(n+1)^{-\alpha}}{(n+1)^\beta-n^\beta} \sim \frac{1}{\beta n^{\alpha+\beta+1}}(n \rightarrow \infty) .
+$$
+同理得到 $V_n u_n \sim \frac{1}{\alpha n^{\alpha+\beta-1}}(n \rightarrow \infty)$. 由注1.1.5(1)(1), 当且仅当 $\displaystyle \displaystyle \displaystyle \alpha+\beta>1$ 时 乘积级数收敛. 由式 $(*)$, 得到乘积级数 $\displaystyle \displaystyle \displaystyle \sum(-1)^{n-1} w_n$ 条件收敛.\\
+1.1.15. 设级数 $\displaystyle \displaystyle \displaystyle \sum a_n\left(a_n>0\right)$ 发散, 记 $S_n$ 为其部分和, $\displaystyle \displaystyle \displaystyle \alpha$ 是常数. 证明: 当 $\displaystyle \displaystyle \displaystyle \alpha \leq 1$ 时, $\displaystyle \displaystyle \displaystyle \sum a_n / S_n^\alpha$ 发散; (2) 当 $\displaystyle \displaystyle \displaystyle \alpha>1$ 时, $\displaystyle \displaystyle \displaystyle \sum a_n / S_n^\alpha$ 收敛.\\
+证 (1) 当 $\displaystyle \displaystyle \displaystyle \alpha=1$ 时, 由 $\displaystyle \displaystyle \displaystyle \sum a_n\left(a_n>0\right)$ 发散知, 它的部分和数列 $\displaystyle \displaystyle \displaystyle \left\{S_n\right\}$ 单调增加无上界, $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} S_n=+\infty$. 从而对任意 $n \in \mathbf{N}_{+}$, 存在 $p \in \mathbf{N}_{+}$,\\
+使得 $S_{n+p} \geq 2 S_n$ 或 $\displaystyle \displaystyle \displaystyle \frac{S_n}{S_{n+p}} \leq \frac{1}{2}$.\\
+ 于是, 有 $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{S_{n+1}}+\frac{a_{n+2}}{S_{n+3}}+\cdots+\frac{a_{n+p}}{S_{n+p}}>$ $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}+a_{n+2}+\cdots+a_{n+p}}{S_{n+p}}=\frac{S_{n+p}-S_n}{S_{n+p}}=1-\frac{S_n}{S_{n+p}} \geq \frac{1}{2}$,\\
+  即, 对 $\displaystyle \displaystyle \displaystyle \varepsilon_0=\frac{1}{2}>0$, 对任意的 $N>0$, 存在 $n>N$, 存在 $p \in \mathbf{N}$, 有 $\displaystyle \displaystyle \displaystyle \frac{a_{n+1}}{S_{n+1}}+\frac{a_{n+2}}{S_{n+3}}+\cdots+\frac{a_{n+p}}{S_{n+p}} \geq \frac{1}{2}$, 故级数 $\displaystyle \displaystyle \displaystyle \sum a_n / S_n$ 发散.\\
+当 $0<\alpha<1$ 时, 由 $\displaystyle \displaystyle \displaystyle \frac{a_n}{S_n^\alpha} \geq \frac{a_n}{S_n}$, 以及由比较判别法知 $\displaystyle \displaystyle \displaystyle \sum \frac{a_n}{S_n^\alpha}$ 发散.\\
+(2) 由微分中值定理, 存在 $\displaystyle \displaystyle \displaystyle \xi \in\left(S_{n-1}, S_n\right)$ 使得 $S_n^{1-\alpha}-S_{n-1}^{1-\alpha}=(1-\alpha) \xi^{-\alpha} a_n$. 于是, 当 $\displaystyle \displaystyle \displaystyle \alpha>1$ 时有
+$$
+\frac{1}{S_{n-1}^{\alpha-1}}-\frac{1}{S_n^{\alpha-1}}=(\alpha-1) \frac{a_n}{\xi^\alpha} \geq(\alpha-1) \frac{a_n}{S_n^\alpha} .
+$$
+由此得到级数 $\displaystyle \displaystyle \displaystyle \sum \frac{a_n}{S_n^\alpha}$ 的部分和有界, 从而收敛.\\
+1.1.16. 讨论级数 $\displaystyle \displaystyle \displaystyle \sum(\sqrt[n]{n}-1)^p$ 的收敛性, 其中 $p>0$\\
+解 由 $\displaystyle \displaystyle \displaystyle \sqrt[n]{n}-1=e^{\frac{1}{n} \ln n}\-1 \sim \frac{\ln n}{n}(n \rightarrow \infty)$ 知 $\displaystyle \displaystyle \displaystyle (\sqrt[n]{n}-1)^p \sim \frac{\ln ^p n}{n^p}(n \rightarrow$ $\displaystyle \displaystyle \displaystyle \infty$ ) (易于验证: $a_n \rightarrow a>0$ 推知 $a_n^p \rightarrow a^p, p>0$ ). 于是,\\
+(i) 当 $p=1$ 时, 由积分判别法知 $\displaystyle \displaystyle \displaystyle \sum \frac{\ln n}{n}$ 发散, 从而原级数发散.\\
+(ii) 当 $p>1$ 时, 有 $\displaystyle \displaystyle \displaystyle 1<\frac{1+p}{2}<p$, 且 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\ln ^p n}{n^p} / \frac{1}{n^{\frac{1+p}{2}}}=\lim _{n \rightarrow \infty} \frac{\ln ^p n}{n^{\frac{p-1}{2}}}=0$. \\
+熟 知 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^{\frac{1+p}{2}}}$ 收敛, 于是由正项级数的比较判别法知原级数收敛.\\
+其中用到如下事实: $\displaystyle \displaystyle \displaystyle \lim _{x \rightarrow+\infty} \frac{\ln ^\beta x}{x^\alpha}=0(\alpha>0, \beta>0)$ (由L' Hospital法则即 得).\\
+(iii) 当 $0<p<1$ 时, 有 $p<\frac{1+p}{2}<1$, 且 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\ln ^p n}{n^p} / \frac{1}{n^{\frac{1+p}{2}}}=\lim _{n \rightarrow \infty} n^{\frac{1-p}{2}} \ln ^p n=$ $+\infty$.\\
+ 熟知 $\displaystyle \displaystyle \displaystyle \sum \frac{1}{n^{\frac{1+p}{2}}}$ 发散 (因为 $p<\frac{1+p}{2}<1$ ), 于是由正项级数的比较判别法知原 级数发散.\\
+之题 1.2\\
+(A)\\
+1.2.2. 求下列函数项级数的收敛域:\\
+(1) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^n}{n}\left(\frac{1}{1+x}\right)^n$\\
+(3) $\displaystyle \displaystyle \displaystyle \sum x^n \sin \frac{x}{2^n}$\\
+解 (1) $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{\left|u_n\right|}=\lim _{n \rightarrow \infty} \frac{1}{\sqrt[n]{n}}\left|\frac{1}{1+x}\right|=\left|\frac{1}{1+x}\right|$. 当 $\displaystyle \displaystyle \displaystyle \left|\frac{1}{1+x}\right|<1$ 时, $x<$ -2 或 $x>0$, 此时原级数绝对收敛. $x=0$ 时. 级数为Leibniz 级数, 条件收敛. $x$ 为 其他值时, 级数发散. 故收敛域为 $(-\infty,-2)$ 和 $[0,+\infty)$.\\
+(2) 由 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{\left|x^n \sin \frac{x}{2^n}\right|}=\frac{|x|}{2}<1$ 知, 当 $|x|<2$ 时级数绝对收敛. $|x|=2$ 时, $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty}( \pm 2)^n \sin \frac{ \pm 2}{2^n} \neq 0$, 级数发散. $|x|>2$ 时, 通项不以 0 为极限. 故, 级数的收敛 域为 $(-2,2)$.\\
+1.2.3. 讨论下列函数列 $\displaystyle \displaystyle \displaystyle \left\{f_n(x)\right\}$ 在所给区间 $D$ 上是否一致收敛, 并说明理 由.\\
+(2) $\displaystyle \displaystyle \displaystyle f_n(x)=\frac{x}{1+n^2 x^2}, D=\mathbf{R}$\\
+(4) $\displaystyle \displaystyle \displaystyle f_n(x)=\frac{x}{n},(\text{i}) D=[0,+\infty)$, (ii) $D=[0, a], a$ 为正常数;\\
+(6) $\displaystyle \displaystyle \displaystyle f_n(x)= \begin{cases}2 n^2 x, & 0 \leq x \leq 1 /(2 n), \\2 n-2 n^2 x, & 1 /(2 n)<x \leq 1 / n, \quad D=[0,1] . \\0, & 1 / n<x \leq 1,\end{cases}$\\
+解 (2) 对任意 $\displaystyle \displaystyle \displaystyle x \in D, \lim _{n \rightarrow \infty} f_n(x)=\lim _{n \rightarrow \infty} \frac{x}{1+n^2 x^2}=0$, 极限函数 $\displaystyle f(x)=$ $0(x \in D)$. 由
+$$
+\lim _{n \rightarrow \infty} \sup _{x \in D}\left|f_n(x)-f(x)\right|=\lim _{n \rightarrow \infty} \sup _{x \in D} \frac{|x|}{1+n^2 x^2}=\lim _{n \rightarrow \infty} \frac{1}{2 n}=0
+$$
+知, $\displaystyle f_n(x)$ 在 $D$ 上一致收敛于 0 .\\
+(4) 对任意 $x$, 有 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} f_n(x)=\lim _{n \rightarrow \infty} \frac{x}{n}=0$, 极限函数 $\displaystyle f(x)=0, x \in D$.\\
+(i) 当 $D=[0,+\infty)$ 时, 取 $x_n=n$, 则
+$$
+f_n\left(x_n\right)-f\left(x_n\right)=1 \not \nrightarrow 0(n \rightarrow \infty)
+$$
+因此 $\displaystyle f_n(x)=\frac{x}{n}$ 在 $D=[0,+\infty)$ 上不一致收敛.\\
+(ii) 当 $D=[0, a]$ 时,
+$$
+\sup _{x \in D}\left|f_n(x)-f(x)\right|=\sup _{x \in D}\left|\frac{x}{n}\right|=\frac{a}{n} \rightarrow 0(n \rightarrow \infty),
+$$
+%14没录
+所以 $\displaystyle f_n(x)$ 在 $D=[0, a]$ 上一致收敛于 0 .\\
+(6) 取定 $x \in(0,1], n$ 充分大时, 有 $\displaystyle \displaystyle \displaystyle \frac{1}{n}<x \leq 1$, 此时 $\displaystyle f_n(x)=0$; 又, $x=$ 0 时 $\displaystyle f_n(x)=0$. 因此, 极限函数 $\displaystyle f(x)=0(x \in D=[0,1])$. 由于
+$$
+f_n\left(\frac{1}{2 n}\right)-f\left(\frac{1}{2 n}\right)=n \nrightarrow \rightarrow 0(n \rightarrow \infty),
+$$
+所以 $\displaystyle f_n(x)$ 在 $D$ 上不一致收敛.\\
+1.2.4. 讨论下列级数在给定的区间 $D$ 上的一致收敛性 (其中常数 $a>0$ ):\\
+(2) $\displaystyle \displaystyle \displaystyle \sum \frac{n}{x^n}, D=[a,+\infty)$;\\
+(11) $\displaystyle \displaystyle \displaystyle \sum \frac{1-2 n}{\left(x^2+n^2\right)\left[x^2+(n-1)^2\right]}, \quad D=[-1,1]$;\\
+(8) $\displaystyle \displaystyle \displaystyle \sum \frac{(-1)^{n-1}}{x^2+n}, D=\mathbb{R}$;\\
+(12) $\displaystyle \displaystyle \displaystyle \sum \frac{x^2}{\left(1+n x^2\right)\left[1+(n-1) x^2\right]}, \quad D=(0,+\infty)$.\\
+解 (2) (i) 当 $0<a \leq 1$ 时, 由于对 $x \in[a, 1](a<1)$ 或 $x=1(a=1)$ 有 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{n}{x^n}=+\infty$, 级数发散, 从而级数不一致收敛.\\
+(ii) 当 $a>1$ 时, 对 $x \in[a,+\infty)$ 有 $\displaystyle \displaystyle \displaystyle \frac{n}{x^n} \leq \frac{n}{a^n}$, 而 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{n}{a^n}$ 收敛(根值判别法), 由 $\displaystyle \displaystyle \displaystyle \mathrm{M}$ 判别法知原级数在 $D$ 上一致收敛.\\
+(8) 对任意 $x \in R$ 记 $\displaystyle \displaystyle \displaystyle u_n(x)=\frac{1}{x^2+n}$, 则 $\displaystyle \displaystyle \displaystyle 0<u_n(x) \leq \frac{1}{n} \rightarrow 0(n \rightarrow \infty)$, 且 $\displaystyle \displaystyle \displaystyle u_n(x)-u_{n+1}(x)=\frac{1}{x^2+n}-\frac{1}{x^2+n+1}>0, n=1,2, \ldots$, 即 $\displaystyle \displaystyle \displaystyle \left\{u_n(x)\right\}$ 对每 个 $x \in \mathbf{R}$ 单调且在 $\displaystyle \displaystyle \displaystyle \mathbf{R}$ 上一致收敛于 0 , 故由Dirichlet判别法知, 交错级数 $\displaystyle \displaystyle \displaystyle \frac{(-1)^{n-1}}{x^2+n}$ 在 $\displaystyle \displaystyle \displaystyle \mathbf{R}$ 上一致收敛.\\
+(11) 由于对 $x \in[-1,1]$, 有
+$$
+\left|\frac{1-2 n}{\left(x^2+n^2\right)\left(x^2+(n-1)^2\right)}\right|=\frac{2 n-1}{\left(x^2+n^2\right)\left(x^2+(n-1)^2\right)} \leq \frac{2 n-1}{n^2(n-1)^2},
+$$
+而级数 $\displaystyle \displaystyle \displaystyle \sum \frac{2 n-1}{n^2(n-1)^2}$ 收敛, 故由 $M$ 判别法知, 级数 $\displaystyle \displaystyle \displaystyle \sum \frac{1-2 n}{\left(x^2+n^2\right)\left(x^2+(n-1)^2\right)}$ 在 $D$ 上一致收敛.\\
+注 也可以先求出部分和函数, 再由函数列的一致收敛判定定理来做. 事实 上, 不难得到部分和函数\\
+$$
+S_n(x)=\frac{1}{x^2+n^2}-\frac{1}{x^2+1}
+$$
+于是
+$$
+\left|S_n(x)+\frac{1}{x^2+1}\right|=\frac{1}{x^2+n^2} \leq \frac{1}{n^2} \rightarrow 0 \quad(n \rightarrow \infty),
+$$
+因而原级数在 $D$ 上一致收敛.\\
+(12) 由于 $\displaystyle \displaystyle \displaystyle u_n(x)=\frac{1}{1+(n-1) x^2}-\frac{1}{1+n x^2}$, 所以对 $x>0$, 有
+$$
+\begin{aligned}
+	S_n(x) & =\left(1-\frac{1}{1+x^2}\right)+\left(\frac{1}{1+x^2}-\frac{1}{1+2 x^2}\right)+\cdots+\left(\frac{1}{1+(n-1) x^2}-\frac{1}{1+n x^2}\right) \\
+	& =1-\frac{1}{1+n x^2} \rightarrow 1(n \rightarrow \infty) .
+\end{aligned}
+$$
+取 $\displaystyle \displaystyle \displaystyle x_n=\frac{1}{\sqrt{n}}$, 则有 $\displaystyle \displaystyle \displaystyle \left|S_n\left(x_n\right)-1\right|=\frac{1}{1+n x_n^2}=\frac{1}{2} \not \rightarrow 0(n \rightarrow \infty)$, 故不一致收敛.\\
+1.2.6. 若在区间 $D$ 上, 对任意的 $n \in \mathbf{N}_{+}$成立 $\displaystyle \displaystyle \displaystyle \left|u_n(x)\right| \leq v_n(x)$, 证明 当 $\displaystyle \displaystyle \displaystyle \sum v_n(x)$ 在 $D$ 上一致收敛时, 级数 $\displaystyle \displaystyle \displaystyle \sum u_n(x)$ 也在 $D$ 上一致收敛.\\
+证：级数 $\displaystyle \displaystyle \displaystyle \sum v_n(x)$ 在 $D$ 上一致收敛, 则对任意 $\displaystyle \displaystyle \displaystyle \varepsilon>0$, 存在 $N$, 当 $n>N$ 时, 对一切 $x \in D$, 及任意 $p \in \mathbf{N}_{+}$, 都有 $\displaystyle \displaystyle \displaystyle \left|v_{n+1}(x)+v_{n+2}(x)+\ldots+v_{n+p}(x)\right|<\varepsilon$.\\
+ 于是, 由已知, 有
+$$
+\left|u_{n+1}(x)+u_{n+2}(x)+\ldots+u_{n+p}(x)\right| \leq v_{n+1}(x)+v_{n+2}(x)+\ldots+v_{n+p}(x)<\varepsilon .
+$$
+依一致收敛的柯西准则得, 函数项级数 $\displaystyle \displaystyle \displaystyle \sum u_n(x)$ 在 $D$ 上一致收敛.\\
+1.2.9. 设 $\displaystyle \displaystyle \displaystyle f(x)=\sum_{n=1}^{\infty} \frac{1}{2^n} \tan \frac{x}{2^n}$.\\
+(1) 证明: $\displaystyle f(x)$ 在 $[0, \pi / 2]$ 上连续; (2) 计算 $\displaystyle \displaystyle \displaystyle \int_{\pi / 6}^{\pi / 2} f(x) \mathrm{d} x$.\\
+解 (1) 级数的每一项都在区间 $[0, \pi / 2]$ 上连续. 设 $\displaystyle \displaystyle \displaystyle a_n(x)=\tan \frac{x}{2^n}, b_n(x)=$ $\displaystyle \displaystyle \displaystyle \frac{1}{2^n}$, 则 $a_n(x)$ 对每一固定的 $\displaystyle \displaystyle \displaystyle x \in\left[0, \frac{\pi}{2}\right]$ 关于 $n$ 是单调的, 且由 $\displaystyle \displaystyle \displaystyle \left|\tan \frac{x}{2^n}\right| \leq \tan \frac{\pi}{4}$ 知, $a_n(x)$ 在 $\displaystyle \displaystyle \displaystyle \left[0, \frac{\pi}{2}\right]$ 上一致有界. 注意到 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{1}{2^n}$ 在 $\displaystyle \displaystyle \displaystyle \left[0, \frac{\pi}{2}\right]$ 上一致收敛, 由 Abel 判 别法知, 级数在 $\displaystyle \displaystyle \displaystyle \left[0, \frac{\pi}{2}\right]$ 上一致收敛, 故 $\displaystyle f(x)$ 在 $[0, \pi / 2]$ 上连续.\\
+(2) 由(1)知 $\displaystyle f(x)$ 在 $[0, \pi / 2]$ 上可积, 且
+$$
+\int_{\pi / 6}^{\pi / 2} f(x) \mathrm{d} x=\int_{\pi / 6}^{\pi / 2} \sum_{n=1}^{\infty} \frac{1}{2^n} \tan \frac{x}{2^n} \mathrm{~d} x=\sum_{n=1}^{\infty} \int_{\pi / 6}^{\pi / 2} \frac{1}{2^n} \tan \frac{x}{2^n} \mathrm{~d} x
+$$
+$$
+=\sum_{n=1}^{\infty}\left(\ln \left|\cos \frac{\pi}{3 \cdot 2^{n+1}}\right|-\ln \left|\cos \frac{\pi}{2^{n+1}}\right|\right)= \ln \frac{\prod \cos \frac{\pi}{3 \cdot 2^{n+1}}}{\prod \cos \frac{\pi}{2^{n+1}}}
+$$
+由于
+$$
+\prod \cos \frac{\pi}{\left(a \cdot 2^n\right)}=\lim _{n \rightarrow \infty} \prod \cos \frac{\pi}{\left(a \cdot 2^n\right)}=\lim _{n \rightarrow \infty} \frac{\sin \frac{\pi}{a}}{2^n \sin \frac{\pi}{a \cdot 2^n}}=\frac{\sin \frac{\pi}{a}}{\frac{\pi}{a}}=\frac{\pi}{a} \sin \frac{\pi}{a},
+$$
+所以 $\displaystyle \displaystyle \displaystyle \int_{\pi / 6}^{\pi / 2} f(x) \mathrm{d} x=\ln \frac{3}{2}$.\\
+1.2.10设$\displaystyle \displaystyle \displaystyle f(x) = \sum _{n = 1}^\infty ne^{-nx}, x > 0,$计算积分$\displaystyle \displaystyle \displaystyle \int_{\ln 2}^{\ln 3}f(x)\mathrm{d}x$\\
+先证明和函数的可积性,再改变积分和求和的顺序即可：\\
+下证$\displaystyle \displaystyle \displaystyle f(x) = \sum _{n = 1}^\infty ne^{-nx}$在$(0,+\infty)$上内闭一致收敛：\\
+(B)\\
+1.2.3. 证明函数 $\displaystyle \displaystyle \displaystyle \zeta(x)=\sum_{n=1}^{\infty} \frac{1}{n^x}$ 在 $(1,+\infty)$ 内连续, 且有连续的各阶导数.\\
+证 (1) 设 $\displaystyle \displaystyle \displaystyle u_n(x)=\frac{1}{n^x}$. 对任意的闭子区间 $[a, A] \subset(1,+\infty)$, 当 $x \in[a, A]$ 时, 有 $\displaystyle \displaystyle \displaystyle  0<\frac{1}{n^x} \leq \frac{1}{n^a}, \sum \frac{1}{n^a}$ 收敛. 由Weierstrass判别法知, $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{1}{n^x}$ 在 $[a, A]$ 上一致收 敛, 即 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{1}{n^x}$ 在 $(1,+\infty)$ 内闭一致收敛. 又, 对每个 $n, u_n(x)$ 在 $(1,+\infty)$ 上连续, 所 以 $\displaystyle \displaystyle \displaystyle \zeta(x)=\sum_{n=1}^{\infty} \frac{1}{n^x}$ 在 $(1,+\infty)$ 上连续.\\
+(2) 对每个 $n, u_n(x)$ 在 $(1,+\infty)$ 上有连续的导数, 且 $u_n^{\prime}(x)=\frac{-\ln n}{n^x}$. 因为
+$$
+\left|\frac{-\ln n}{n^x}\right| \leq \frac{\ln n}{n^a}, x \in[a, A] \subset(1,+\infty)
+$$
+目.\\
+$$
+\lim _{n \rightarrow \infty} n^{(a+1) / 2} \frac{\ln n}{n^a}=\lim _{n \rightarrow \infty} \frac{\ln n}{n^{(a-1) / 2}}=0,
+$$
+由 $\displaystyle \displaystyle \displaystyle \frac{a+1}{2}>1$ 及比较判别法知, $\displaystyle \displaystyle \displaystyle \sum \frac{\ln n}{n^a}$ 收敛, 所以由Weierstrass判别法知, 函 数项级数 $\displaystyle \displaystyle \displaystyle \sum \frac{-\ln n}{n^x}$ 在 $[a, A]$ 上一致收敛, 即 $\displaystyle \displaystyle \displaystyle \sum -\frac{\ln n}{n^x}$ 在 $(1,+\infty)$ 内闭一致收敛. 因 此, 由逐项求导定理知, $\displaystyle \displaystyle \displaystyle \zeta(x)=\sum_{n=1}^{\infty} \frac{1}{n^x}$ 在 $(1,+\infty)$ 上有连续的导数.\\
+仿此, 利用 $\displaystyle \displaystyle \displaystyle \frac{d^k}{\mathrm{d}x^k}\left(\frac{1}{n^x}\right)=(-1)^k \frac{\ln ^k n}{n^x}\left(k \in \mathbf{N}_{+}\right)$和对固定 $k$, 成立 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{\ln ^k n}{n^\delta}=$ 0 (其中 $\displaystyle \displaystyle \displaystyle \delta$ 为 $(0,1)$ 中某数), 可得到 $\displaystyle \displaystyle \displaystyle \sum_{n=1}^{\infty}(-1)^k \frac{\ln ^k n}{n^x}$ 在 $(1,+\infty)$ 内闭一致收敛, 从而得 到 $\displaystyle \displaystyle \displaystyle \zeta(x)$ 在 $(1,+\infty)$ 有连续的各阶导数.\\
+1.2.4\\
+$|u_n(x)| \leq \max\left\{u_n(a),u_n(b)\right\}$,由Weierstrass判别法易知其一致收敛性\\
+1.2.5. 证明: 级数 $\displaystyle \displaystyle \displaystyle \sum(-1)^n x^n(1-x)$ 在 $[0,1]$ 上绝对收敛且一致收敛, 但其 绝对值级数却不一致收敛.\\
+证 (1) 若 $x=0$ 或 1 , 则级数通项为 0 , 级数收敛; 若 $x \in(0,1)$, 则 $\displaystyle \displaystyle \displaystyle \sum x^n$ 为几 何级数, 收敛, 从而原级数绝对收敛.\\
+(2) 由交错级数Leibniz判别法知,\\ 对任意的 $x \in[0,1],\left|R_n(x)\right|=\mid S_n(x)-$ $S(x) \mid \leq(1-x) x^{n+1}$.\\ 记 $\displaystyle f(x)=(1-x) x^{n+1}$, 则 $\displaystyle \displaystyle \displaystyle f^{\prime}(x)=(n+2) x^n\left(\frac{n+1}{n+2}-x\right)$ 进 而可得 $\displaystyle f(x)$ 在点 $\displaystyle \displaystyle \displaystyle x=\frac{n+1}{n+2}$ 取得它在 $[0,1]$ 上的最大值, 所以
+$$
+\left|R_n(x)\right| \leq \frac{1}{n+2}\left(\frac{n+1}{n+2}\right)^{n+1}<\frac{1}{n+2},
+$$
+从而 $\displaystyle \displaystyle \displaystyle \lim _{n \rightarrow \infty} \sup _{0 \leq x \leq 1}\left|R_n(x)\right|=0$, 故原级数在 $[0,1]$ 上一致收敛. (注: 可由Dirichlet判 别法得证其一致收敛.)\\
+(3) 讨论级数 $\displaystyle \displaystyle \displaystyle \sum x^n(1-x)$. 由于 $\displaystyle \displaystyle \displaystyle S_n(x)=\sum_{k=0}^n(1-x) x^k=1-x^{n+1}, \lim _{n \rightarrow \infty} S_n(x)=$ $S(x)=\left\{\begin{array}{l}1,0 \leq x<1 \\ 0, x=1\end{array}, \displaystyle \lim _{n \rightarrow \infty} \sup _{0 \leq x \leq 1}\left|S_n(x)-S(x)\right|=1 \neq 0\right.$, 所以绝对值级数不 一致收敛. (注: 可由连续性定理说明其不一致收敛, 因为和函数不连续.)\\
+故, 原级数在 $[0,1]$ 绝对并一致收敛, 但其各项绝对值组成的级数却不一致 收敛.\\
+习题 1.3\\
+(A)\\
+1.3.1. 幂级数 $\displaystyle \displaystyle \displaystyle \sum a_n(x+3)^n$ 在 $x=-5$ 处发散, $x=0$ 处收敛, 这可能吗? 若 该幂级数在 $x=-1$ 处条件收敛, 求其收敛区间.\\
+答 不可能, 因为幂级数 $\displaystyle \displaystyle \displaystyle \sum a_n(x+3)^n$ 在 $x=-5$ 处发散即 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 在 $x=$ -2 处发散, 因此由 Abel第一定理知, 对于满足 $|x|>2$ 的任何 $x$, 级数 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 都 发散. 又因为幂级数 $\displaystyle \displaystyle \displaystyle \sum a_n(x+3)^n$ 在 $x=0$ 处收敛, 即 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 在 $x=3$ 处收 敛, 因此再次由 Abel第一定理知, 对于满足 $|x|<3$ 的任何 $x$, 级数 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 都收 敛. 这与前面结论矛盾, 因此幂级数 $\displaystyle \displaystyle \displaystyle \sum a_n(x+3)^n$ 在 $x=-5$ 处发散, $x=0$ 处 收敛是不可能的.\\
+若该幂级数在 $x=-1$ 处条件收敛即 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 在 $x=2$ 处条件收敛, $x=2$ 是 $\displaystyle \displaystyle \displaystyle \sum a_n x^n$ 的收敛端点(因为收敛区间内的点是绝对收敛点), 收敛半径为 2 .\\
+因此所求的收敛区间由 $|x+3|<2$ 给出, 即为 $(-5,-1)$.\\
+1.3.2. 求下列幂级数的收敛半径与收敛域:\\
+(2) $\displaystyle \displaystyle \sum \frac{n^2}{n !} x^n$\\
+(4) $\displaystyle \displaystyle \sum \frac{1}{2^n} x^{n^2}$\\
+(6) $\displaystyle \displaystyle \sum \frac{3^n+(-2)^n}{n}(2 x+1)^n$;\\
+(8) $\displaystyle \displaystyle \sum n !\left(\frac{x^2}{n}\right)^n$\\
+解 (2) 由于 $\displaystyle \displaystyle \left|\frac{a_{n+1}}{a_n}\right|=\frac{(n+1)^2}{(n+1) !} \frac{n !}{n^2}=\frac{1}{n+1}\left(\frac{n+1}{n}\right)^2 \rightarrow 0(n \rightarrow \infty)$,
+所以幂级数的收敛半径 $R=\infty$, 收敛域为 $(-\infty,+\infty)$.\\
+(4) 对于幂级数 $\displaystyle \displaystyle \sum\left|\frac{x^{n^2}}{2^n}\right|$, 由于
+$$
+\lim _{n \rightarrow \infty} \sqrt[n]{\left|\frac{x^{n^2}}{2^n}\right|}=\lim _{n \rightarrow \infty} \frac{\left|x^n\right|}{2}= \begin{cases}0 & |x|<1 \\ 1 / 2, & |x|=1 \\ +\infty & |x|>1\end{cases}
+$$
+因此, 幂级数的收敛半径 $R=1$. 因为 $|x|=1$ 时原级数为 $\displaystyle \displaystyle \sum \frac{1}{2^n}$, 收敛, 所以该幂 级数的收敛域为 $[-1,1]$.\\
+(6) 设 $u_n=\frac{3^n+(-2)^n}{n}$, 由于 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{\left|u_n\right|}=3$, 故收敛半径 $R=\frac{1}{3}$. 当 $2 x+1=-\frac{1}{3}$, 即 $\displaystyle \displaystyle x=-\frac{2}{3}$ 时, 幂级数为级数 $\displaystyle \displaystyle \sum \frac{3^n+(-2)^n}{n} \frac{1}{3^n}(-1)^n=$ $\displaystyle \displaystyle \sum\left(\frac{(-1)^n}{n}+\frac{1}{n} \cdot\left(\frac{2}{3}\right)^n\right)$, 是收敛的; 当 $2 x+1=\frac{1}{3}$, 即 $x=-\frac{1}{3}$ 时, 幂级数为 级数 $\displaystyle \displaystyle \sum \frac{3^n+(-2)^n}{n} \frac{1}{3^n}=\sum\left(\frac{1}{n}+\frac{(-1)^n}{n} \cdot\left(\frac{2}{3}\right)^n\right)$, 是发散的. 因此该幂级数的收 敛域为 $\displaystyle \displaystyle \left[-\frac{2}{3},-\frac{1}{3}\right)$. 这里用到级数的线性运算性质.\\
+(8) 由于 $\displaystyle \displaystyle \lim _{n \rightarrow \infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim _{n \rightarrow \infty}\left(\frac{n}{n+1}\right)^n=\frac{1}{e}$, 所以幂级数的收敛半径 $R$ 满 足 $R^2=e$, 即 $R=\sqrt{e}$. 又因为当 $x= \pm \sqrt{e}$ 时幂级数为级数 $\displaystyle \displaystyle \sum n !\left(\frac{e}{n}\right)^n$, 而 由Stirling公式知通项等价于 $\displaystyle \displaystyle \sqrt{2 \pi n}$, 它不以 0 为极限, 级数发散. 故幂级数的收敛 域为 $(-\sqrt{e}, \sqrt{e})$.\\
+1.3.3. 求下列函数的 Maclaurin 展开式:\\
+(2) $\displaystyle \displaystyle \sin ^3 x$
+(6) $(1+x) e^{-x}$;
+(7) $\displaystyle \displaystyle \frac{x}{1+x-2 x^2}$;
+(8) $\displaystyle \displaystyle \ln \left(x+\sqrt{1+x^2}\right)$;
+(10) $\displaystyle \displaystyle \int_0^x \cos t^2 \mathrm{~d} t$.\\
+(10) 由于
+$$
+\cos t^2=\sum_{n=0}^{\infty} \frac{(-1)^n\left(t^2\right)^{2 n}}{(2 n) !}=\sum_{n=0}^{\infty} \frac{(-1)^n t^{4 n}}{(2 n) !}, t \in(-\infty, \infty),
+$$
+所以
+$$
+\int_0^x \cos t^2 \mathrm{~d} t=\int_0^x \sum_{n=0}^{\infty} \frac{(-1)^n t^{4 n}}{(2 n) !} d t=\sum_{n=0}^{\infty} \frac{(-1)^n x^{4 n+1}}{(2 n) !(4 n+1)}, \quad\mathrm{d}x \in(-\infty, \infty) .
+$$
+1.3.6. 求下列幂级数的和函数:\\
+(2) $\displaystyle \displaystyle \sum_{n=1}^{\infty}(-1)^n n^2 x^n$;
+(4) $\displaystyle \displaystyle \sum_{n=1}^{\infty}(2 n+1) x^n$
+(6) $\displaystyle \displaystyle \sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^{2 n}}{(2 n-1) 3^{2 n-1}}$.\\
+解 (2) 由例1.3.6后的说明可知 $\displaystyle \displaystyle \sum_{n=1}^{\infty} n^2 x^n=\frac{x(1+x)}{(1-x)^3},|x|<1$, 故
+$$
+\sum_{n=1}^{\infty}(-1)^n n^2 x^n=\frac{x(x-1)}{(1+x)^3},|x|<1 \text {. }
+$$
+(4) $\displaystyle \displaystyle S(x)=2 \sum_{n=1}^{\infty} n x^n+\sum_{n=1}^{\infty} x^n=\frac{2 x}{(1-x)^2}+\frac{x}{1-x}=\frac{x(3-x)}{(1-x)^2},|x|<1$.
+另解: 令 $\displaystyle S(x)=\sum_{n=1}^{\infty}(2 n+1) x^n$. 由于
+$$
+\sum_{n=1}^{\infty}(2 n+1) x^n=\sum_{n=1}^{\infty} 2(n+1) x^n-\sum_{n=1}^{\infty} x^n,
+$$
+可设
+$$
+g(x)=\sum_{n=1}^{\infty} 2(n+1) x^n, \quad h(x)=\sum_{n=1}^{\infty} x^n .
+$$
+将 $g(x)$ 积分可得
+$$
+\int_0^x g(x) \mathrm{d}x=2 \sum_{n=1}^{\infty} x^{n+1}=\frac{2 x^2}{1-x},
+$$
+所以 $\displaystyle \displaystyle g(x)=\frac{2 x(2-x)}{(1-x)^2}$. 而 $\displaystyle h(x)=\sum_{n=1}^{\infty} x^n=\frac{x}{1-x}$, 故
+$$
+S(x)=\sum_{n=1}^{\infty}(2 n+1) x^n=\frac{x(3-x)}{(1-x)^2} .
+$$
+$\displaystyle \text { (6) 令 } S(x)=\sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^{2 n}}{(2 n-1) 3^{2 n-1}}=x \sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^{2 n-1}}{(2 n-1) 3^{2 n-1}}=x g(x), \text { 则 } \\
+ x g^{\prime}(x)=\sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^{2 n-1}}{3^{2 n-1}}=\frac{x}{3} \sum_{n=1}^{\infty}\left(-\frac{x^2}{9}\right)^{n-1}=\frac{x}{3} \frac{1}{1+\frac{x^2}{9}}=\frac{3 x}{9+x^2} .
+$\\
+所以 $\displaystyle \displaystyle g^{\prime}(x)=\frac{3}{9+x^2}$, 于是 $g(x)=\int_0^x g^{\prime}(x) \mathrm{d}x+g(0)=\arctan \frac{x}{3}$. 故
+$$
+S(x)=x \arctan \frac{x}{3},|x| \leq 3
+$$
+1.3.7. 设在 $(-R, R)$ 内有 $\displaystyle \displaystyle f(x)=\sum_{n=0}^{\infty} a_n x^n$. 证明: 若 $\displaystyle f$ 为奇函数, 则 $a_{2 n}=0$; 若 $\displaystyle f$ 为偶函数, 则 $a_{2 n+1}=0$, 其中 $n \in \mathbf{N}$.\\
+证 由于 $\displaystyle \displaystyle f(x)=\sum_{n=0}^{\infty} a_n x^n, x \in(-R, R)$, 所以 $\displaystyle \displaystyle f(-x)=\sum_{n=0}^{\infty}(-1)^n a_n x^n$. 当 $\displaystyle f$ 为 奇函数时, 应有 $a_n+(-1)^n a_n=0(n=1,2,3 \ldots)$. 而当且仅当 $n=2 k-1(k=$ $1,2, \ldots)$ 时, 才满足 $1+(-1)^n=0$, 故必有 $a_{2 n}=0$. 当 $\displaystyle f$ 为偶函数时, 应 有 $a_n-(-1)^n a_n=0(n=1,2,3 \ldots)$. 而当且仅当 $n=2 k(k=1,2, \ldots)$ 时, 才满 足 $1-(-1)^n=0$, 故必有 $a_{2 n+1}=0$.\\
+1.3.8. 利用幂级数求下列数项级数的和: $(2)\displaystyle  \sum_{n=0}^{\infty}(-1)^n\left(n^2-n+1\right) 2^{-n}$.\\
+解 (2) 设 $\displaystyle \displaystyle S(x)=\sum_{n=0}^{\infty}\left(n^2-n+1\right) x^n$, 则有
+$$
+S(x)=\sum_{n=0}^{\infty} n^2 x^n-\sum_{n=0}^{\infty} n x^n+\sum_{n=0}^{\infty} x^n=\frac{x(x+1)}{(1-x)^3}-\frac{x}{(1-x)^2}+\frac{1}{1-x}=\frac{1-2 x+3 x^2}{(1-x)^3}
+$$
+当 $\displaystyle \displaystyle x=-\frac{1}{2}$ 时, 该幂级数即为数项级数 $\displaystyle \displaystyle \sum_{n=0}^{\infty}(-1)^n\left(n^2-n+1\right) 2^{-n}$, 故
+$$
+\sum_{n=0}^{\infty}(-1)^n\left(n^2-n+1\right) 2^{-n}=\frac{22}{27}
+$$
+1.3.9. 设 $\displaystyle f(x)=\sum_{n=1}^{\infty} n 3^{n-1} x^{n-1}$.\\
+(1) 证明 $\displaystyle f(x)$ 在 $(-1 / 3,1 / 3)$ 内连续; (2) 计算 $\displaystyle \displaystyle \int_0^{1 / 8} f(x) \mathrm{d} x$.
+解 (1) 因为 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{n 3^{n-1}}=3$, 所以其收敛半径为 $\displaystyle \displaystyle \frac{1}{3}$. 因此级数在 $(-1 / 3,1 / 3)$ 内闭一致收敛, 故 $\displaystyle f(x)$ 在 $(-1 / 3,1 / 3)$ 内连续。\\
+(2) 由于此幂级数在 $\displaystyle \displaystyle \left[0, \frac{1}{8}\right]$ 上一致收敛, 所以
+$$
+\int_0^{1 / 8} f(x) \mathrm{d} x=\sum_{n=1}^{\infty} \int_0^{\frac{1}{8}} n x^{n-1} 3^{n-1} \mathrm{~d} x=\frac{1}{5}
+$$
+1.3.12. 对 $|x|<1$, 证明
+$$
+x+\frac{2}{3} x^3+\frac{2}{3} \cdot \frac{4}{5} x^5+\frac{2}{3} \cdot \frac{4}{5} \cdot \frac{6}{7} x^7+\cdots=\frac{\arcsin x}{\sqrt{1-x^2}}
+$$
+证 记左端的级数和函数为 $\displaystyle f(x)$, 则容易得到 $\displaystyle f^{\prime}(x)=1+x f(x)+x^2 f^{\prime}(x)$, 即
+$$
+\left(1-x^2\right) f^{\prime}(x)=1+x f(x)
+$$
+解此微分方程, 并利用 $\displaystyle f(0)=0$, 得到 $\displaystyle \displaystyle f(x)=\frac{\arcsin x}{\sqrt{1-x^2}}$.\\
+1.3.13 设 $C(\alpha)$ 为 $(1+x)^\alpha$ 在 $x=0$ 处的幂级数展开式中 $x^{2010}$ 的系数, 求
+$$
+I=\int_0^1 C(-y-1)\left(\frac{1}{y+1}+\frac{1}{y+2}+\frac{1}{y+3}+\cdots+\frac{1}{y+2010}\right) d y .
+$$
+解 因为
+$$
+C(-y-1)=\frac{(-y-1)(-y-2) \cdots(-y-2010)}{2010 !}=\frac{(y+1)(y+2) \cdots(y+2010)}{2010 !}
+$$
+所以被积函数等于 $\displaystyle \displaystyle \frac{\mathrm{d}}{\mathrm{d} y}\left(\frac{(y+1)(y+2) \cdots(y+2010)}{2010 !}\right)$. 于是,
+$$
+I=\left.\frac{(y+1)(y+2) \cdots(y+2010)}{2010 !}\right|_0 ^1=2011-1=2010
+$$
+1.3.3. 证明: (1) 若级数 $\displaystyle \displaystyle \sum_{n=0}^{\infty} a_n$ 收敛, 则 $\displaystyle \displaystyle f(x)=\sum_{n=0}^{\infty} a_n x^n$ 在 $[0,1]$ 上一致收 敛; (2) 若级数 $\displaystyle \displaystyle \sum_{n=0}^{\infty} a_n$ 收敛于 $S$, 则 $\displaystyle \displaystyle \lim _{x \rightarrow 1^{-}} \sum_{n=0}^{\infty} a_n x^n=S$.\\
+证 (1) 因为 $\displaystyle \displaystyle \left|x^n\right| \leq 1(x \in[0,1])$ 且对每个 $x \in[0,1],\left\{x^n\right\}$ 关于 $n$ 单调, 所以 由 $\displaystyle \displaystyle \mathrm{Abel}$ 一致收敛判别法知 $\displaystyle \displaystyle \sum_{n=0}^{\infty} a_n x^n$ 在 $[0,1]$ 上一致收敛.\\
+(2) 由连续性定理即得结论.\\
+1.3.4(Tauber 定理) 设对 $x \in(-1,1)$ 有 $\displaystyle \displaystyle f(x)=\sum_{n=0}^{\infty} a_n x^n$, 并且 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} n a_n=0$. 若 $\displaystyle \displaystyle \lim _{x \rightarrow 1^{-}} f(x)=A$, 则 $\displaystyle \displaystyle \sum_{n=0}^{\infty} a_n$ 收敛且其和为 $A$. 试证明之.\\
+\newpage
+证明: 采用三分法, 写出
+$$
+\left|\sum_{k=0}^n a_k-A\right| \leq\left|\sum_{k=0}^n a_k-\sum_{k=0}^n a_k x^k\right|+\left|\sum_{k=n+1}^{\infty} a_k x^k\right|+\left|\sum_{k=0}^{\infty} a_k x^k-A\right| .
+$$
+利用 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} n a_n=0$, 由Cauchy命题得
+$$
+\lim _{n \rightarrow \infty} \frac{\left|a_1\right|+2\left|a_2\right|+\cdots+n\left|a_n\right|}{n}=0
+$$
+又由 $\displaystyle \displaystyle \lim _{x \rightarrow 1^{-}} f(x)=A$, 知 $\displaystyle \displaystyle \lim _{n \rightarrow \infty}\left|f\left(1-\frac{1}{n}\right)-A\right|=0$. 因此, $\displaystyle \displaystyle \forall \varepsilon>0, \exists N>0$, 当 $n>N$ 时, 有
+$$
+\frac{\left|a_1\right|+2\left|a_2\right|+\cdots+n\left|a_n\right|}{n}<\frac{\varepsilon}{3}, \quad\left|n a_n\right|<\frac{\varepsilon}{3}, \quad\left|f\left(1-\frac{1}{n}\right)-A\right|<\frac{\varepsilon}{3} .
+$$
+于是对于 $n>N$, 在式 (1) 中取 $\displaystyle \displaystyle x=1-\frac{1}{n}$, 则其右边的第一项有估计
+$$
+\begin{aligned}
+	\left|\sum_{k=0}^n a_k-\sum_{k=0}^n a_k x^k\right| & =\left|\sum_{k=0}^n a_k\left(1-x^k\right)\right|=\left|\sum_{k=0}^n a_k(1-x)\left(1+x+\cdots+x^{k-1}\right)\right| \\
+	& \leq \sum_{k=0}^n\left|a_k\right|(1-x) k=\frac{\left|a_1\right|+2\left|a_2\right|+\cdots+n\left|a_n\right|}{n}<\frac{\varepsilon}{3} .
+\end{aligned}
+$$
+对于式(1)右边的第二项有估计
+$$
+\left|\sum_{k=n+1}^{\infty} a_k x^k\right| \leq \frac{1}{n} \sum_{k=n+1}^{\infty} k\left|a_k\right| x^k<\frac{\varepsilon}{3 n} \sum_{k=n+1}^{\infty} x^k \leq \frac{\varepsilon}{3 n} \cdot \frac{1}{1-x}=\frac{\varepsilon}{3 n \cdot \frac{1}{n}}=\frac{\varepsilon}{3} .
+$$
+对于式(1)右边的第三项有估计
+$$
+\left|\sum_{k=0}^{\infty} a_k x^k-A\right|=\left|f\left(1-\frac{1}{n}\right)-A\right|<\frac{\varepsilon}{3}
+$$
+因此, 当 $n>N$ 时, 有
+$$
+\left|\sum_{k=0}^n a_k-A\right|<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}
+$$
+1.3.5. 设 $\displaystyle \displaystyle \sum a_n$ 为级数, $S_n$ 为其部分和, 且极限 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_n}{a_{n+1}}$ 存在.若 $S_n \rightarrow$ $+\infty,\\ a_n / S_n \rightarrow 0(n \rightarrow \infty)$, 求级数 $\displaystyle \displaystyle \sum a_n x^n$ 的收敛半径. (提示: 利用 Stolz 公 式.)\\
+解 因为 $S_n \rightarrow \infty$, 且极限 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_n}{a_{n+1}}$ 存在, 所以由 Stolz 公式可得
+$$
+0=\lim _{n \rightarrow \infty} \frac{a_n}{S_n}=\lim _{n \rightarrow \infty} \frac{a_n-a_{n-1}}{S_n-S_{n-1}}=\lim _{n \rightarrow \infty}\left(1-\frac{a_{n-1}}{a_n}\right) .
+$$
+故 $\displaystyle \displaystyle \lim _{n \rightarrow \infty} \frac{a_{n-1}}{a_n}=1$, 级数 $\displaystyle \displaystyle \sum a_n x^n$ 的收敛半径为 1 .\\
+1.3.6. 求无穷级数的和:
+$$
+S=1-\frac{1}{4}+\frac{1}{7}-\frac{1}{10}+\cdots+\frac{(-1)^{n+1}}{3 n-2}+\cdots .
+$$
+解 因为通项 $\displaystyle \displaystyle a_n=\frac{(-1)^{n+1}}{3 n-2}=(-1)^{n+1} \int_0^1 x^{3 n-3} \mathrm{~d} x$, 所以级数的部分和
+$$
+\begin{aligned}
+	S_n & =\int_0^1\left(1-x^3+x^6-\cdots+(-1)^{n+1} x^{3 n-3}\right) \mathrm{d} x \\
+	& =\int_0^1 \frac{1-(-1)^n x^{3 n}}{1+x^3} \mathrm{~d} x=\int_0^1 \frac{1}{1+x^3} \mathrm{~d} x-\int_0^1 \frac{(-1)^n x^{3 n}}{1+x^3} \mathrm{~d} x
+\end{aligned}
+$$
+而
+$$
+\left|\int_0^1 \frac{(-1)^n x^{3 n}}{1+x^3} \mathrm{~d} x\right| \leq \int_0^1 x^{3 n} \mathrm{~d} x=\frac{1}{3 n+1} \rightarrow 0(n \rightarrow \infty)
+$$
+因此
+$$
+\begin{aligned}
+	S & =\int_0^1 \frac{1}{1+x^3} \mathrm{~d} x=\frac{1}{3}\left[\int_0^1 \frac{1}{1+x} \mathrm{~d} x+\int_0^1 \frac{2-x}{1-x+x^2} \mathrm{~d} x\right]^2 \\
+	& =\frac{1}{3}\left[\ln (1+x)-\frac{1}{2} \ln \left(1-x+x^2\right)+\sqrt{3} \arctan \frac{2 x-1}{\sqrt{3}}\right]_{x=0}^1 \\
+	& =\frac{1}{3}\left(\ln 2+\frac{\sqrt{3}}{3} \pi\right) .
+\end{aligned}
+$$
+1.3.7. 设正整数 $n>1$, 证明
+$$
+\frac{1}{2 n e}<\frac{1}{e}-\left(1-\frac{1}{n}\right)^n<\frac{1}{n e}
+$$
+解 对 $n>1$, 我们有
+$$
+e^{1 /(n-1)}=1+\frac{1}{n-1}+\cdots>\frac{n}{n-1},
+$$
+这推知 $\displaystyle \displaystyle \left(1-\frac{1}{n}\right)^{n-1}>\frac{1}{e}$, 因此 $\displaystyle \displaystyle \left(1-\frac{1}{n}\right)^n>\frac{1}{e}\left(1-\frac{1}{n}\right)$, 得证上界.
+又,
+$$
+\begin{aligned}
+	\left(1-\frac{1}{n}\right)^n & =\exp \left(n \ln \left(1-\frac{1}{n}\right)\right) \\
+	& =\exp \left(n\left(-\frac{1}{n}-\frac{1}{2 n^2}-\frac{1}{3 n^3}-\cdots\right)\right) \\
+	& <e^{-1} \exp \left(-\frac{1}{2 n}-\frac{1}{3 n^2}\right) \\
+	& <e^{-1}\left[1-\left(\frac{1}{2 n}+\frac{1}{3 n^2}\right)+\frac{1}{2}\left(\frac{1}{2 n}+\frac{1}{3 n^2}\right)^2\right] \\
+	& <e^{-1}\left(1-\frac{1}{2 n}\right)
+\end{aligned}
+$$
+即 $\displaystyle \displaystyle \left(1-\frac{1}{n}\right)^n<e^{-1}\left(1-\frac{1}{2 n}\right)$, 得证下界. 注意, 其中用到
+$$
+\frac{1}{2 n}+\frac{1}{3 n^2}<1(n \geq 1), \quad \frac{1}{2 n}+\frac{1}{3 n^2}<\sqrt{\frac{2}{3}} \cdot \frac{1}{n}(n \geq 2) .
+$$\\
+习题 1.5\\
+(A)\\
+1.5.3 设 $S(x)$ 是周期为 $2 \pi$ 的函数 $\displaystyle f(x)$ 的 Fourier 级数的和函数. $\displaystyle f$ 在一个 周期内的表达式为
+$$
+f(x)= \begin{cases}0, & 2<|x| \leq \pi \\ x, & |x| \leq 2\end{cases}
+$$
+写出 $S(x)$ 在 $[-\pi, \pi]$ 上的表达式, 并求 $S(\pi), S(3 \pi / 2)$ 与 $S(-10)$.\\
+解 因为 $\displaystyle f(x)= \begin{cases}0, & 2<|x| \leq \pi, \\ x, & |x| \leq 2,\end{cases}$\\
+$$
+\begin{aligned}
+	& a_0=\frac{1}{\pi} \int_{-\pi}^\pi f(x) \mathrm{d}x=\frac{1}{\pi} \int_{-2}^2 x \mathrm{d}x=0 \\
+	& a_n=\frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos n x \mathrm{d}x=\frac{1}{\pi} \int_{-2}^2 x \cos n x \mathrm{d}x=0 \\
+	& b_n=\frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin n x \mathrm{d}x=\frac{1}{\pi} \int_{-2}^2 x \sin n x \mathrm{d}x=\frac{2}{\pi}\left(-\frac{2 \cos 2 n}{n}+\frac{\sin 2 n}{n^2}\right) .
+\end{aligned}
+$$
+所以 $\displaystyle f(x) \sim \sum_{k=1}^{\infty} \frac{2}{n \pi}\left(-2 \cos 2 n+\frac{\sin 2 n}{n}\right) \sin n x$,\\
+$ S(\pi)=0 \text {, } \\
+	\begin{aligned}
+	& S\left(\frac{3 \pi}{2}\right)=\sum_{n=1}^{\infty} \frac{2}{n \pi}\left(-2 \cos 2 n+\frac{\sin 2 n}{n}\right) \sin \frac{3 n \pi}{2} \\
+	& =\sum_{n=1}^{\infty} \frac{(-1)^n 2}{(2 n-1) \pi}\left(-2 \cos 2(2 n-1)+\frac{\sin 2(2 n-1)}{2 n-1}\right) \text {, } \\
+	& S(-10)=\sum_{k=1}^{\infty} \frac{2}{n \pi}\left(-2 \cos 2 n+\frac{\sin 2 n}{n}\right) \sin 10 n . \\
+	&
+\end{aligned}
+$\\
+1.5.4. 求下列函数的 Fourier 展开式:\\
+(3) $\displaystyle f(x)=e^x+1,-\pi \leq x<\pi$;\\
+(7) $\displaystyle f(x)=x^2, x \in[0,2 \pi)$.\\
+解 (3) 因为 $\displaystyle f(x)=e^x+1 a_0=\frac{1}{\pi} \int_{-\pi}^\pi f(x) \mathrm{d}x=\frac{1}{\pi} \int_{-\pi}^\pi\left(e^x+1\right) \mathrm{d}x=	\frac{e^\pi-e^{-\pi}}{\pi}  +2$
+$$
+\begin{aligned}
+	a_n & =\frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos n x \mathrm{d}x=\frac{1}{\pi} \int_{-\pi}^\pi\left(e^x+1\right) \cos n x \mathrm{d}x=(-1)^n \frac{e^\pi-e^{-\pi}}{n^2+1}, \\
+	b_n & =\frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin n x \mathrm{d}x=\frac{1}{\pi} \int_{-\pi}^\pi\left(e^x+1\right) \sin n x \mathrm{d}x=(-1)^{n+1} n \frac{e^\pi-e^{-\pi}}{n^2+1} .
+\end{aligned}
+$$
+所以
+$$
+\begin{aligned}
+	f(x) \sim & \frac{e^\pi-e^{-\pi}}{2 \pi}+2+\sum_{n=1}^{\infty}(-1)^n \frac{e^\pi-e^{-\pi}}{n^2+1}(\cos n x-n \sin n x) \\
+	& = \begin{cases}e^x+1, & -\pi<x<\pi \\
+		\cosh (\pi)+1, & x= \pm \pi .\end{cases}
+\end{aligned}
+$$
+(7) 函数 $\displaystyle f(x)$ 及其周期延拓后显然为按段光滑, 即可展开为 Fourier 级数.\\
+其中 $\displaystyle a_0=\frac{1}{\pi} \int_0^{2 \pi} f(x) \mathrm{d}x=\frac{1}{\pi} \int_0^{2 \pi} x^2 \mathrm{d}x=\frac{8}{3} \pi^2$,
+$$
+\begin{aligned}
+	& a_n=\frac{1}{\pi} \int_0^{2 \pi} f(x) \cos n x \mathrm{d}x=\frac{1}{\pi} \int_0^{2 \pi} x^2 \cos n x \mathrm{d}x=\frac{4 \pi}{n^2}, \quad n \geq 1 \\
+	& b_n=\frac{1}{\pi} \int_0^{2 \pi} f(x) \sin n x \mathrm{d}x=\frac{1}{\pi} \int_0^{2 \pi} x^2 \sin n x \mathrm{d}x=-\frac{4 \pi^2}{n}, \quad n \geq 1
+\end{aligned}
+$$
+所以 $\displaystyle f(x) \sim \frac{4}{3} \pi^2+\sum_{n=1}^{\infty} 4 \pi\left(\frac{\cos n x}{n^2}-\frac{\pi \sin n x}{n}\right)=\left\{\begin{array}{ll}x^2, & 0<x<2 \pi \\ 2 \pi^2, & x=0,2 \pi\end{array}\right.$.\\
+1.5.5. 将下列函数展开为正弦级数:\\
+(2) $\displaystyle f(x)=e^{-2 x}, x \in[0, \pi]$;\\
+(4) $\displaystyle f(x)= \begin{cases}\displaystyle \cos \frac{\pi x}{2}, &\displaystyle  0 \leq x<1 \\ 0, &\displaystyle  1 \leq x \leq 2\end{cases}$\\
+解 (2) $\displaystyle b_n=\frac{2}{\pi} \int_0^\pi e^{-2 x} \sin n x \mathrm{d}x=\frac{n}{2 \pi}\left(1-(-1)^n\right) e^{-2 \pi}-\frac{n^2}{4} b_n$,
+移项整理可得
+$$
+b_n=\frac{2 n}{\pi\left(4+n^2\right)}\left[1-(-1)^n\right] e^{-2 \pi}, \quad n \geq 1
+$$
+所以 $\displaystyle f(x) \sim \frac{2}{\pi} \sum_{n=1}^{\infty} \frac{n}{\left(4+n^2\right)}\left[1-(-1)^n e^{-2 \pi}\right] \sin n x$.\\
+(4) $\displaystyle b_1=\frac{2}{2} \int_0^2 f(x) \sin \frac{\pi x}{2} \mathrm{d}x=\int_0^1 \cos \frac{\pi x}{2} \sin \frac{\pi x}{2} 2 \pi \mathrm{d}x=\frac{1}{\pi}$,
+$\displaystyle b_n=\frac{2}{2} \int_0^2 f(x) \sin \frac{n \pi x}{2} \mathrm{d}x=\int_0^1 \cos \frac{\pi x}{2} \sin \frac{\pi x}{2} 2 \pi \mathrm{d}x=\frac{2\left(n-\sin \frac{n \pi}{2}\right)}{\pi\left(n^2-1\right)}, n \geq 2$.
+所以 $\displaystyle f(x) \sim \frac{1}{\pi} \sin \frac{\pi x}{2}+\frac{2}{\pi} \sum_{n=2}^{\infty} \frac{n-\sin \frac{n \pi}{2}}{\pi\left(n^2-1\right)} \sin \frac{n \pi x}{2}$.\\
+1.5.6. 将下列函数展开为余弦级数:\\
+(2) $\displaystyle f(x)=x-1, x \in[0,2]$, 并求 $\displaystyle \sum_{n=1}^{\infty} n^{-2}$ 的和;\\
+(4) $\displaystyle f(x)= \begin{cases}\sin 2 x, & 0 \leq x<\pi / 4 \\ 1, & \pi / 4 \leq x \leq \pi / 2\end{cases}$\\
+解 (2) 将 $\displaystyle f(x)$ 进行偶延拓, 则 $b_n=0, n \geq 0$,
+$$
+\begin{aligned}
+	a_0 & =\frac{2}{2} \int_0^2(x-1) \mathrm{d} x=0 ; \\
+	a_n & =\frac{2}{2} \int_0^2(x-1) \cos \frac{n \pi x}{2} \mathrm{~d} x=\frac{4\left((-1)^n-1\right)}{(n \pi)^2}, n \geq 1 .
+\end{aligned}
+$$
+所以 $\displaystyle f(x) \sim-\frac{1}{\pi^2} \sum_{n=1}^{\infty} \frac{8}{(2 n-1)^2} \cos \frac{(2 n-1) \pi x}{2}=x-1 \quad(x \in[0,2])$.\\
+代 $x=2$, 得到 $\displaystyle \sum_{n=1}^{\infty} \frac{1}{(2 n-1)^2}=\frac{\pi^2}{8}$. 又, $\displaystyle \sum_{n=1}^{\infty} \frac{1}{(2 n)^2}=\frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{n^2}$. 因此,
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^2}=\sum_{n=1}^{\infty} \frac{1}{(2 n-1)^2}+\sum_{n=1}^{\infty} \frac{1}{(2 n)^2}=\frac{\pi^2}{8}+\frac{1}{4} \sum_{n=1}^{\infty} \frac{1}{n^2}
+$$
+移项得到 $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}=\frac{\pi^2}{6}$.\\
+(4) 将 $\displaystyle f(x)$ 进行偶延拓, 则 $b_n=0, n \geq 0$.\\
+$$
+a_0=\frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \mathrm{d} x=\frac{4}{\pi} \int_0^{\frac{\pi}{4}} \sin 2 x \mathrm{~d} x+\frac{4}{\pi} \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \mathrm{~d} x=\frac{2}{\pi}+1
+$$
+当 $n=1$ 时, 易得 $\displaystyle a_1=-\frac{1}{\pi}$.
+当 $n>1$ 时,
+$$
+a_n=\frac{4}{\pi} \int_0^{\frac{\pi}{4}} \cos 2 n x \sin 2 x \mathrm{~d} x+\frac{4}{\pi} \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \cos 2 n x \mathrm{~d} x=\frac{2\left(n-\sin \frac{n \pi}{2}\right)}{n \pi\left(1-n^2\right)} .
+$$
+所以 $\displaystyle f(x) \sim\left(\frac{1}{\pi}+\frac{1}{2}\right)-\frac{1}{\pi} \cos 2 x+\frac{2}{\pi} \sum_{n=2}^{\infty} \frac{n-\sin \frac{n \pi}{2}}{n\left(1-n^2\right)} \cos 2 n x$.\\
+1.5.7. (3) 将函数 $\displaystyle f(x)=\left\{\begin{array}{l}2-x, x \in[0,4], \\ x-6, x \in(4,8)\end{array}\right.$ 展开为Fourier级数.\\
+解 (3)函数 $\displaystyle f(x)$ 及其周期延拓后的函数为按段光滑, 即可展开为Fourier 级数.\\
+$\displaystyle 
+\begin{array}{rl}
+	a_0&\displaystyle =\frac{1}{4} \int_0^8   f(x) \mathrm{d} x=\frac{1}{4} \int_0^4(2-x) \mathrm{d} x+\frac{1}{4} \int_4^8(x-6) \mathrm{d} x=0, \\
+	a_n&\displaystyle  =\frac{1}{4} \int_0^8 f(x) \cos \frac{n \pi x}{4} \mathrm{~d} x \\
+	&\displaystyle  =\frac{1}{4} \int_0^4(2-x) \cos \frac{n \pi x}{4} \mathrm{~d} x+\frac{1}{4} \int_4^8(x-6) \cos \frac{n \pi x}{4} \mathrm{~d} x \\
+	&\displaystyle  =\frac{8}{n^2 \pi^2}\left(1-(-1)^n\right), \\
+	b_n&\displaystyle  =\frac{1}{4} \int_0^8 f(x) \sin \frac{n \pi x}{4} \mathrm{~d} x\\
+	   &\displaystyle =\frac{1}{4} \int_0^4(2-x) \sin \frac{n \pi x}{4} \mathrm{~d} x+\frac{1}{4} \int_4^8(x-6) \sin \frac{n \pi x}{4} \mathrm{~d} x=0 .
+\end{array}
+$\\
+
+
+所以 $\displaystyle f(x) \sim \sum_{n=1}^{\infty} \frac{16}{\pi^2(2 n-1)^2} \cos \frac{(2 n-1) \pi x}{4}=f(x)$.\\
+1.5.8. 求 $\displaystyle \sin x$ 全部非零零点的倒数的平方和.\\
+解 因为 $\displaystyle \sin x$ 的全部零点为 $\displaystyle \{n \pi: n \in \mathbf{Z}, n \neq 0\}$, 所以 $\displaystyle \sin x$ 全部非零零点的 倒数的平方和为
+$$
+2 \sum_{n=1}^{\infty} \frac{1}{(n \pi)^2}=\frac{1}{3}
+$$
+1.5.9. 证明: 在 $[0, \pi]$ 上下列展开式成立:\\
+(1) $\displaystyle x(\pi-x)=\frac{\pi^2}{6}-\sum_{n=1}^{\infty} \frac{\cos 2 n x}{n^2}$\\
+(2) $\displaystyle x(\pi-x)=\frac{8}{\pi} \sum_{n=1}^{\infty} \frac{\sin (2 n-1) x}{(2 n-1)^3}$.\\
+证 (1) 将其进行偶延拓, 延拓后的函数为按段光滑, 即可展开为余弦级数. 则 $b_n=0, n \geq 1$.\\
+$$
+\begin{aligned}
+	a_0 & =\frac{2}{\pi} \int_0^\pi x(\pi-x) \mathrm{d} x=\frac{\pi^2}{3} \\
+	a_n & =\frac{2}{\pi} \int_0^\pi x(\pi-x) \cos n x \mathrm{~d} x=\frac{2}{\pi} \int_0^\pi \pi x \cos n x \mathrm{~d} x-\frac{2}{\pi} \int_0^\pi x^2 \cos n x \mathrm{~d} x \\
+	& =\frac{2\left(1+(-1)^n\right)}{n^2}, \quad n \geq 1
+\end{aligned}
+$$
+所以 $\displaystyle x(\pi-x)=\frac{\pi^2}{6}-\sum_{n=1}^{\infty} \frac{\cos 2 n x}{n^2}$. (由收玫定理或直接验证知, 端点处级数也收 敛到函数值 0 )\\
+(2)将其进行奇延拓, 延拓后的函数为按段光滑, 即可展开为正弦级数.
+则 $a_n=0, n \geq 0$
+$$
+\begin{aligned}
+	b_n & =\frac{2}{\pi} \int_0^\pi x(\pi-x) \sin n x \mathrm{~d} x=\frac{2}{\pi} \int_0^\pi \pi x \sin n x \mathrm{~d} x-\frac{2}{\pi} \int_0^\pi x^2 \sin n x \mathrm{~d} x \\
+	& =\frac{4\left(1-(-1)^n\right)}{n^3 \pi}, n \geq 1 .
+\end{aligned}
+$$
+所以 $\displaystyle x(\pi-x)=\frac{8}{\pi} \sum_{n=1}^{\infty} \frac{\sin (2 n-1) x}{(2 n-1)^3}$. (由收敛定理或直接验证知, 端点处级数也 收敛到函数值 0)\\
+1.5.11. 写出定义在任意一个长度为 $2 \pi$ 区间 $[a, a+2 \pi]$ 上的函数 $\displaystyle f$ 的 Fourier 级数及其系数的计算公式.
+解 设 $\displaystyle f(x)$ 为定义 $[a, a+2 \pi]$ 上以 $2 \pi$ 为周期的的函数, 假设其具有如下 的Fourier 展开
+$$
+f(x) \sim \frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n \cos n x+b_n \sin n x\right) .
+$$
+下面来确定其系数取值:
+$$
+\begin{aligned}
+	& \int_a^{a+2 \pi} f(x) \cos m x \mathrm{~d} x \\
+	& =\int_a^{a+2 \pi}\left[\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n \cos n x+b_n \sin n x\right)\right] \cos m x \mathrm{~d} x \\
+	& =\frac{a_0}{2} \int_a^{a+2 \pi} \cos m x \mathrm{~d} x+\sum_{n=1}^{\infty}\left(a_n \int_a^{a+2 \pi} \cos n x \cos m x+b_n \int_a^{a+2 \pi} \sin n x \cos m x \mathrm{~d} x\right),
+\end{aligned}
+$$
+由于 $\displaystyle \cos m x, \sin n x, \cos n x$ 都是以 $2 \pi$ 为周期函数,则它们乘积仍为以 $2 \pi$ 为周期 函数.\\
+$$
+\begin{gathered}
+	\text { 故 } \int_0^{2 \pi} \cos n x \cos m x \mathrm{~d} x=\int_a^{a+2 \pi} \cos n x \cos m x \mathrm{~d} x= \begin{cases}\pi, & n=m, \\
+		0, & n \neq m ;\end{cases} \\
+	\int_0^{2 \pi} \sin n x \cos m x \mathrm{~d} x=\int_a^{a+2 \pi} \sin n x \cos m x \mathrm{~d} x=0 \text {. 而 } \\
+	\frac{a_0}{2} \int_a^{a+2 \pi} \cos m x \mathrm{~d} x=\frac{a_0}{2} \int_0^{2 \pi} \cos m x \mathrm{~d} x=0,
+\end{gathered}
+$$
+所以
+$$
+\int_a^{a+2 \pi} f(x) \cos m x \mathrm{~d} x=a_m \pi,
+$$
+从而
+$$
+a_m=\frac{1}{\pi} \int_a^{a+2 \pi} f(x) \cos m x \mathrm{~d} x, \quad m \geq 0 .
+$$
+同理
+$$
+\begin{aligned}
+	& \int_a^{a+2 \pi} f(x) \sin m x \mathrm{~d} x \\
+	 =&\int_a^{a+2 \pi}\left[\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n \cos n x+b_n \sin n x\right)\right] \sin m x \mathrm{~d} x\\
+  =&\frac{a_0}{2} \int_a^{a+2 \pi} \sin m x \mathrm{~d} x+\sum_{n=1}^{\infty}\left(a_n \int_a^{a+2 \pi} \cos n x \sin m x+b_n \int_a^{a+2 \pi} \sin n x \sin m x \mathrm{~d} x\right),\\
+ b_m=&\frac{1}{\pi} \int_a^{a+2 \pi} f(x) \sin m x \mathrm{~d} x, m \geq 1\text{即为所求}.\\
+\end{aligned}
+$$\\
+(B)\\
+1.5.1. (2) 设 $\displaystyle f(x)$ 在 $[-\pi, \pi]$ 上可积或绝对可积, 证明:
+若 $\displaystyle \forall x \in[-\pi, \pi]$, 成立 $\displaystyle f(x)=-f(x+\pi)$, 则 $a_{2 n}=b_{2 n}=0$.\\
+证 $\displaystyle a_{2 n}=\frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos (2 n x) \mathrm{d} x=\frac{1}{\pi} \int_{-\pi}^0 f(x) \cos (2 n x) \mathrm{d} x+\frac{1}{\pi} \int_0^\pi f(x) \cos (2 n x) \mathrm{d} x$.
+对于右边第一个积分, 令 $x+\pi=t$, 则有
+$$
+\int_{-\pi}^0 f(x) \cos (2 n x) \mathrm{d} x=\int_0^\pi f(t-\pi) \cos [2 n(t-\pi)] \mathrm{d} t=-\int_0^\pi f(t) \cos (2 n t) \mathrm{d} t,
+$$
+其中用到 $\displaystyle f(t-\pi)=-f(t-\pi+\pi)=-f(t)$.\\
+故有 $a_{2 n}=0$. 同理可得 $b_{2 n}=0$.\\
+1.5.3. 设周期为 $2 \pi$ 的函数 $\displaystyle f(x)$ 在 $[-\pi, \pi]$ 上的 Fourier 系数为 $a_n$ 及 $b_n$, 求下列函数的 Fourier 系数 $\displaystyle \tilde{a}_n$ 与 $\displaystyle \tilde{b}_n$ :\\
+(1) $g(x)=f(-x)$\\
+(2) $h(x)=f(x+c)(c$ 是常数 $)$;\\
+(3) $\displaystyle f(x)=\frac{1}{\pi} \int_{-\pi}^\pi f(t) f(x-t) \mathrm{d} t$ (假定积分次序可以交换).\\
+解 (1) 当 $g(x)=f(-x)$ 时,
+$\displaystyle \widetilde{a_n}=\frac{1}{\pi} \int_{-\pi}^\pi g(x) \cos n x \mathrm{~d} x=\frac{1}{\pi} \int_{-\pi}^\pi f(-x) \cos n x \mathrm{~d} x$.
+取变量代换 $x=-t$ 有
+$$
+\begin{aligned}
+	& \widetilde{a_n}=\frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (-n t) \mathrm{d} t=\frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos n t \mathrm{~d} t=a_n, \\
+	& \tilde{b_n}=\frac{1}{\pi} \int_{-\pi}^\pi g(x) \sin (n x) \mathrm{d} x=\frac{1}{\pi} \int_{-\pi}^\pi f(-x) \sin n x \mathrm{~d} x,
+\end{aligned}
+$$
+取变量代换 $x=-t$ 有
+$$
+\tilde{b_n}=\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (-n t) \mathrm{d} t=-\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin n t \mathrm{~d} t=-b_n \text {. }
+$$
+(2) 当 $h(x)=f(x+c)$ 时,
+$$
+\widetilde{a_n}=\frac{1}{\pi} \int_{-\pi}^\pi h(x) \cos n x \mathrm{~d} x=\frac{1}{\pi} \int_{-\pi}^\pi f(x+c) \cos n x \mathrm{~d} x
+$$
+$$
+\begin{aligned}
+	& =\frac{1}{\pi} \int_{-\pi+c}^{\pi+c} f(t) \cos (n t-n c) \mathrm{d} t=\frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (n t-n c) \mathrm{d} t \\
+	& =\frac{1}{\pi} \int_{-\pi}^\pi f(t)[\cos n t \cos n c+\sin n t \sin n c] \mathrm{d} t \\
+	& =a_n \cos n c+b_n \sin n c
+\end{aligned}
+$$
+$$
+\begin{aligned}
+	\tilde{b_n} & =\frac{1}{\pi} \int_{-\pi}^\pi h(x) \sin n x \mathrm{~d} x=\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (n t-n c) \mathrm{d} t \\
+	& =b_n \cos n c-a_n \sin n c
+\end{aligned}
+$$
+(3) $\displaystyle \widetilde{a_n}=\frac{1}{\pi} \int_{-\pi}^\pi F(x) \cos n x \mathrm{~d} x=\frac{1}{\pi^2} \int_{-\pi}^\pi \mathrm{d} t \int_{-\pi}^\pi f(t) f(x-t) \cos n x \mathrm{~d} x$.\\
+取 $n=0$ 时, $\displaystyle \widetilde{a_0}=\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi f(x-t) \mathrm{d} x$. 令 $x-t=u$, 有
+$$
+\int_{-\pi-t}^{\pi-t} f(u) \mathrm{d} u=\int_{-\pi}^\pi f(u) \mathrm{d} u=\pi a_0
+$$
+故
+$$
+\widetilde{a_0}=\frac{1}{\pi} \int_{-\pi}^\pi a_0 f(t) \mathrm{d} t=a_0^2 .
+$$
+当取 $n>0$ 时,
+$$
+\begin{aligned}
+	\widetilde{a_n} & =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi f(x-t) \cos n x \mathrm{~d} x \\
+	& =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi-t}^{\pi-t} f(u) \cos (n u+n t) \mathrm{d} u(\text { 其中 } x-t=u) \\
+	& =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi f(u) \cos (n u+n t) \mathrm{d} u \\
+	& =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi[f(u) \cos n u \cos n t-f(u) \sin n u \sin n t] \mathrm{d} u \\
+	& =\frac{1}{\pi} \int_{-\pi}^\pi f(t)\left(a_n \cos n t-b_n \sin n t\right) \mathrm{d} t \\
+	& =a_n^2-b_n^2, \\
+\end{aligned}
+$$
+$$
+\begin{aligned}
+	\tilde{b_n} & =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi f(x-t) \sin n x \mathrm{~d} x \\
+	& =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi-t}^{\pi-t} f(u) \sin (n u+n t) \mathrm{d} u(\text { 其中 } x-t=u)\\
+	& =\frac{1}{\pi^2} \int_{-\pi}^\pi f(t) \mathrm{d} t \int_{-\pi}^\pi[f(u) \sin n u \cos n t+f(u) \cos n u \sin n t] \mathrm{d} u \\
+	& =\frac{1}{\pi} \int_{-\pi}^\pi f(t)\left(a_n \sin n t+a_n \sin n t\right) \mathrm{d} t \\
+	& =2 a_n b_n .
+\end{aligned}
+$$
+1.5.4. 设 $\displaystyle f, g$ 在 $[-\pi, \pi]$ 上可积, $a_n, b_n$ 与 $\displaystyle \alpha_n, \beta_n$ 分别是 $\displaystyle f$ 与 $g$ 的 Fourier 系数, 利用 Parseval 等式证明:
+$$
+\frac{1}{\pi} \int_{-\pi}^\pi f(x) g(x) \mathrm{d} x=\frac{a_0 \alpha_0}{2}+\sum_{n=1}^{\infty}\left(a_n \alpha_n+b_n \beta_n\right) .
+$$
+证 易知 $\displaystyle f(x) \pm g(x)$ 的Fourier 系数为 $a_0 \pm \alpha_0, a_n \pm \alpha_n, b_n \pm \beta_n, n \in \mathbf{N}_{+}$. 由 $\displaystyle f(x) \pm g(x)$ 的可积性, 利用 Parseval 等式可得
+$$
+\begin{aligned}
+	& \frac{1}{\pi} \int_{-\pi}^\pi[f(x)+g(x)]^2 \mathrm{~d} x=\frac{\left(a_0+\alpha_0\right)^2}{2}+\sum_{n=1}^{\infty}\left[\left(a_n+\alpha_0\right)^2+\left(b_n+\beta_n\right)^2\right], \\
+	& \frac{1}{\pi} \int_{-\pi}^\pi[f(x)-g(x)]^2 \mathrm{~d} x=\frac{\left(a_0-\alpha_0\right)^2}{2}+\sum_{n=1}^{\infty}\left[\left(a_n-\alpha_0\right)^2+\left(b_n-\beta_n\right)^2\right] .
+\end{aligned}
+$$
+两式相减即得
+$$
+\frac{1}{\pi} \int_\pi^\pi f(x) g(x) \mathrm{d} x=\frac{a_0 \alpha_0}{2}+\sum_{n=1}^{\infty}\left(a_n \alpha_n+b_n \beta_n\right) .
+$$
+\end{document}
