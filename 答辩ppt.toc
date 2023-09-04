@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Self Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{First Round of Testing}{4}{0}{2}
+\beamer@sectionintoc {3}{Second Round of Testing}{5}{0}{3}
+\beamer@subsectionintoc {3}{1}{前言}{5}{0}{3}
+\beamer@subsectionintoc {3}{2}{文本预处理}{6}{0}{3}
+\beamer@subsectionintoc {3}{3}{LSTM}{8}{0}{3}
+\beamer@subsectionintoc {3}{4}{TextCNN}{14}{0}{3}

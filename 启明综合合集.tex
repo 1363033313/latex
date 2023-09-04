@@ -1,0 +1,42 @@
+\documentclass[a4paper,11pt,UTF8]{article}
+\usepackage{ctex}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{amsmath}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}
+\usepackage{cleveref}
+\usepackage{esint} 
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{pifont}
+\usepackage{draftwatermark}
+\usepackage{extarrows}
+\SetWatermarkLightness{0.97} 
+\SetWatermarkText{学数华科}
+\begin{document}
+\noindent 第一部分：优化与建模\\
+一.封闭曲线 $A$ 中有一条长为 1 的弦, 弦上一点 $P$ 将其分为两段, 长度分别为 $x,1-x$. 该弦在曲 线上转过一周, $P$ 随弦同时转过，形成一条封闭曲线$B$。曲线 ${A}$ 围成的面积与曲线 ${B}$ 围成的面 积之差为 ${S}({x})$.由Holditch原理可知，  $S(x)$ 与曲线 ${A}, B$ 形状无关, 仅与 ${P}$ 点位置（即 ${x}$ 大小）有关。求 ${S}({x})$ 取最 大值为多少 $(10)$, 以及此时的 $x$ 取值 $(10)$\\
+二.一商店老板的称量天平损坏, 其左臂比右臂长了 $10 \%$ ~$20 \%$, 一客人前来购买 $2 kg$ 的物 品, 老板以左物右码和右物左码分别称量了 $1 kg$ 物品。最终是老板还是客人的利益损失? $(10)$ 损失比的范围是什么?  $(10)$\\
+第二部分：信息论\\ 
+三.信息熵 (information entropy) 是信息论的基本概念。描述信息源各可能事件发生的 不确定性。20世纪 40 年代, 香农 (C. E. Shannon) 借鉴了热力学的概念, 把信息中排除了 冗余后的平均信息量称为 “信息熵” , 并给出了计算信息熵的数学表达式。信息摘的提出 解决了对信息的量化度量问题。(摘自百度百科) 给出信息熵定义式
+$$
+H(x)=\sum_{i=1}^n-p\left(x_i\right) \log _a{p(x_i)}
+$$
+${n}=2$ 时, 我们可以将上式改写为
+$$
+H(p, q)=-p \log _ap-q \log _aq 
+$$
+容易看出, 当 ${p}={q}=0.5$ 时, 上式取极值\\
+1.比特 (BIT, Binary digit), 计算机专业术语, 是信息量单位, 是由英文 BIT 音译而 来。同时也是二进制数字中的位, 信息量的度量单位, 为信息量的最小单位。在需要作出 不同选择的情况下把备选的刺激数量减少半所必需的信息。(摘自百度百科)假如抛硬币时，正面与反面朝上的概率都是$\frac{1}{2}$，根据公式可算出信息量为1bit(即$H(0.5,0.5)=1$)，那么此时的底数a为多少?\\
+求: a 取什么值最好, 并给出合理解释\\
+2.有人提出, 根据统计知识对于相互独立的两个变量 ${X}$ 和 ${Y}$ 应有 $H(X+Y)=H(X)+H(Y)$ 设想 ${X}$ 和 ${Y}$ 均服从参数为 ${p}$ 的两点分布, 由高中知识我们知道, ${Z}={X}+{Y}$ 应服从参数为 2 和 ${p}$ 的两点分布, 求证 $H(Z)=2 H(X)$ 是否正确\\
+3.根据琴生不等式求证 $H(X)$ 有最大值\\
+提示:$f(x)$为凸函数时，$\displaystyle f(a_1x_1+a_2x_2+\ldots+a_nx_n)\leq a_1f(x_1)+a_2f(x_2)+\ldots+a_nf(x_n),\\\text{其中}\sum_{k=1}^{n}a_k=1$\\
+4.现有 2023 个小球(标号为$\{1,2,...,2023\}$)和一个足够大的称量天平, 有一个劣质小球较轻了一些。试求出至少多 少次称量才能找出该球\\
+第三部分：产量分配\\
+四.某公司拟使用 ${t}$ 万元采购原料, 原料的定价分别为 $p_1, p_2, p_3, \ldots, p_n$, 采购原料的总量为 $x_1, x_2, x_3 ,\ldots , x_n$. 生产产品的总量为 $\min \left\{q_1 x_1, q_2 x_2, q_3 x_3, \ldots \ldots, q_n x_n\right\}$. 以尽量扩大生产为前提, 该公司应以什么策略进行购物 (10 $)$. 若预算翻倍, 哪一种原料增加购买的数量最多 $(10)$.\\
+\end{document}

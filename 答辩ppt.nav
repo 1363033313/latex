@@ -1,0 +1,54 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Self Introduction}{3}{Self Introduction}{0}}
+\headcommand {\slideentry {1}{0}{0}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@sectionpages {1}{3}}
+\headcommand {\beamer@subsectionpages {1}{3}}
+\headcommand {\sectionentry {2}{First Round of Testing}{4}{First Round of Testing}{0}}
+\headcommand {\slideentry {2}{0}{0}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@sectionpages {1}{4}}
+\headcommand {\beamer@subsectionpages {1}{4}}
+\headcommand {\sectionentry {3}{Second Round of Testing}{5}{Second Round of Testing}{0}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{5}{前言}}
+\headcommand {\slideentry {3}{1}{1}{5/5}{前言}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{6}{文本预处理}}
+\headcommand {\slideentry {3}{2}{1}{6/6}{文本预处理}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {3}{2}{1}{6/7}{文本预处理}{0}}
+\headcommand {\beamer@framepages {6}{7}}
+\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{8}{LSTM}}
+\headcommand {\slideentry {3}{3}{1}{8/8}{LSTM}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {3}{3}{2}{9/9}{LSTM}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {3}{3}{2}{9/10}{LSTM}{0}}
+\headcommand {\beamer@framepages {9}{10}}
+\headcommand {\slideentry {3}{3}{2}{9/11}{LSTM}{0}}
+\headcommand {\beamer@framepages {9}{11}}
+\headcommand {\slideentry {3}{3}{2}{9/12}{LSTM}{0}}
+\headcommand {\beamer@framepages {9}{12}}
+\headcommand {\slideentry {3}{3}{2}{9/13}{LSTM}{0}}
+\headcommand {\beamer@framepages {9}{13}}
+\headcommand {\beamer@subsectionpages {8}{13}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{14}{TextCNN}}
+\headcommand {\slideentry {3}{4}{1}{14/14}{TextCNN}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {3}{4}{1}{14/15}{TextCNN}{0}}
+\headcommand {\beamer@framepages {14}{15}}
+\headcommand {\slideentry {3}{4}{1}{14/16}{TextCNN}{0}}
+\headcommand {\beamer@framepages {14}{16}}
+\headcommand {\beamer@partpages {1}{16}}
+\headcommand {\beamer@subsectionpages {14}{16}}
+\headcommand {\beamer@sectionpages {5}{16}}
+\headcommand {\beamer@documentpages {16}}
+\headcommand {\gdef \inserttotalframenumber {16}}
